@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate Strategy Hub - Table of Contents</title>
+    <title>Executive Strategy Notes Portal</title>
     <style>
         :root {
             --bg-primary: #f8fafc;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
+            --bg-sidebar: #0f172a;
+            --text-main: #334155;
+            --text-title: #0f172a;
+            --text-light: #94a3b8;
             --accent: #2563eb;
-            --accent-light: #eff6ff;
+            --accent-light: #dbeafe;
             --card-bg: #ffffff;
             --border: #e2e8f0;
         }
@@ -19,61 +21,218 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
+            display: flex;
             background-color: var(--bg-primary);
             color: var(--text-main);
-            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR PANEL NAVIGATION --- */
+        aside {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            color: #ffffff;
+            padding: 2rem 1.5rem;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
         }
 
-        .container {
-            width: 100%;
-            max-width: 900px;
+        .logo-area {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+            color: #f1f5f9;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 1rem;
         }
 
-        /* Breadcrumb Navigation */
-        .breadcrumbs {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
+        .nav-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-group-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Pure CSS Routing Tab Targets */
+        .nav-link {
+            display: block;
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+
+        /* --- DYNAMIC WINDOW AREA WORKSPACE --- */
+        main {
+            margin-left: 280px;
+            flex-grow: 1;
+            padding: 3rem;
+            max-width: 1240px;
+            width: calc(100% - 280px);
+        }
+
+        /* Responsive Mobile Architecture */
+        @media (max-width: 968px) {
+            body { flex-direction: column; }
+            aside { width: 100%; height: auto; position: relative; padding: 1.5rem; }
+            main { margin-left: 0; padding: 1.5rem; width: 100%; }
+            .grid-container { grid-template-columns: 1fr !important; }
+        }
+
+        /* CSS Architecture for Content Switching Panels */
+        .workspace-panel {
+            display: none;
         }
         
-        .breadcrumbs a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
+        /* Default visible panel, and targeted visible selectors */
+        #dashboard-view { display: block; }
+        :target { display: block !important; }
+        :target ~ #dashboard-view { display: none !important; }
 
         header {
-            margin-bottom: 3rem;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--accent-light);
+            color: var(--accent);
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
+        h1 {
+            font-size: 2.25rem;
+            color: var(--text-title);
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
-        /* Chapter List Layout */
+        .subtitle {
+            color: #64748b;
+            margin-top: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* --- GRID PATTERNS & CARDS --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 1.25rem;
+        }
+
+        /* --- CSS STRATEGY MATRIX RENDER --- */
+        .matrix-container {
+            background: #f1f5f9;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            aspect-ratio: 4 / 3;
+        }
+
+        .matrix-cell {
+            background: #ffffff;
+            border: 2px dashed #cbd5e1;
+            border-radius: 0.375rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .matrix-cell.high-priority {
+            background: #eff6ff;
+            border-color: #3b82f6;
+            color: #1d4ed8;
+        }
+
+        .cell-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cell-desc {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        /* --- STRATEGIC MAP LEGENDS --- */
+        .legend-list { list-style: none; }
+        .legend-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .legend-item:last-child { border-bottom: none; }
+        .legend-label { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+        /* --- TABLE OF CONTENTS PANEL --- */
         .chapter-list {
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
+            margin-top: 1rem;
         }
 
         .chapter-card {
@@ -87,21 +246,18 @@
             text-decoration: none;
             color: inherit;
             transition: all 0.2s ease-in-out;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
         }
 
-        /* Hover States to make it feel like an application */
         .chapter-card:hover {
             border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
         }
 
         .chapter-meta {
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
-            flex-grow: 1;
         }
 
         .chapter-number {
@@ -112,122 +268,179 @@
             color: var(--accent);
         }
 
-        .chapter-title {
+        .chapter-heading {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--text-main);
+            color: var(--text-title);
         }
 
-        .chapter-desc {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-            max-width: 650px;
-        }
-
-        /* Action elements on the right of the item */
         .chapter-action {
             display: flex;
             align-items: center;
             gap: 1.5rem;
         }
 
-        .badge {
+        .tag {
             font-size: 0.75rem;
             padding: 0.25rem 0.6rem;
             border-radius: 0.375rem;
             font-weight: 600;
         }
-
-        .badge-core { background: var(--accent-light); color: var(--accent); }
-        .badge-advanced { background: #fef3c7; color: #d97706; }
-
-        .arrow-icon {
-            color: var(--text-muted);
-            font-weight: bold;
-            font-size: 1.25rem;
-            transition: transform 0.2s;
-        }
-
-        .chapter-card:hover .arrow-icon {
-            color: var(--accent);
-            transform: translateX(4px);
-        }
+        .tag-core { background: #eff6ff; color: #2563eb; }
+        .tag-advanced { background: #fef3c7; color: #d97706; }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <!-- --- STATIC LEFT CONTROLLER NAVIGATION --- -->
+    <aside>
+        <div class="logo-area">StrategyHub</div>
         
-        <!-- Navigation Trail -->
-        <div class="breadcrumbs">
-            <a href="index.html">StrategyHub Dashboard</a> &rarr; Corporate Strategy
+        <div class="nav-group">
+            <div class="nav-group-title">Portals</div>
+            <!-- Targets native CSS window ids below -->
+            <a href="#" class="nav-link">Main Dashboard</a>
+            <a href="#corporate-view" class="nav-link">Corporate Strategy</a>
         </div>
 
-        <!-- Section Header -->
-        <header>
-            <h1>Corporate Strategy</h1>
-            <p class="subtitle">Managing the multi-business portfolio, capital configuration, and corporate parenting advantages.</p>
-        </header>
+        <div class="nav-group">
+            <div class="nav-group-title">Framework Layers</div>
+            <a href="#" class="nav-link">Business Strategy</a>
+            <a href="#" class="nav-link">Functional Notes</a>
+        </div>
+    </aside>
 
-        <!-- Dynamic Content List -->
-        <nav class="chapter-list">
-            
-            <!-- Chapter 1 -->
-            <!-- Update the href attribute below to link directly to your chapter html file -->
-            <a href="chapter1.html" class="chapter-card">
-                <div class="chapter-meta">
-                    <span class="chapter-number">Chapter 01</span>
-                    <div class="chapter-title">Defining Corporate Scope</div>
-                    <p class="chapter-desc">Analyses of vertical integration, diversification boundaries, and geographic market footprints.</p>
-                </div>
-                <div class="chapter-action">
-                    <span class="badge badge-core">Core</span>
-                    <span class="arrow-icon">&rarr;</span>
-                </div>
-            </a>
+    <!-- --- WORKSPACE CENTRAL PIPELINE --- -->
+    <main>
+        
+        <!-- PANEL A: CORPORATE STRATEGY CHAPTER LIST -->
+        <!-- Opens dynamically when #corporate-view is populated in the browser URL -->
+        <section id="corporate-view" class="workspace-panel">
+            <header>
+                <span class="badge">Enterprise Directory</span>
+                <h1>Corporate Strategy Pillar</h1>
+                <p class="subtitle">Managing multi-business portfolios, cross-unit capital distribution, and corporate parenting infrastructure nodes.</p>
+            </header>
 
-            <!-- Chapter 2 -->
-            <a href="chapter2.html" class="chapter-card">
-                <div class="chapter-meta">
-                    <span class="chapter-number">Chapter 02</span>
-                    <div class="chapter-title">Portfolio Management Models</div>
-                    <p class="chapter-desc">Practical implementation metrics for the BCG Growth-Share matrix and GE-McKinsey multi-axis framework.</p>
-                </div>
-                <div class="chapter-action">
-                    <span class="badge badge-core">Core</span>
-                    <span class="arrow-icon">&rarr;</span>
-                </div>
-            </a>
+            <div class="chapter-list">
+                <!-- Update href configurations to point directly to your localized chapter files -->
+                <a href="chapter1.html" class="chapter-card">
+                    <div class="chapter-meta">
+                        <span class="chapter-number">Chapter 01</span>
+                        <div class="chapter-heading">Defining Corporate Scope</div>
+                        <p class="cell-desc" style="margin-top: 0.25rem;">Analyses of vertical integration, diversification boundaries, and global geographic market footprints.</p>
+                    </div>
+                    <div class="chapter-action">
+                        <span class="tag tag-core">Core</span>
+                        <span style="color: var(--accent); font-weight: bold;">&rarr;</span>
+                    </div>
+                </a>
 
-            <!-- Chapter 3 -->
-            <a href="chapter3.html" class="chapter-card">
-                <div class="chapter-meta">
-                    <span class="chapter-number">Chapter 03</span>
-                    <div class="chapter-title">Corporate Parenting & Synergies</div>
-                    <p class="chapter-desc">How head office allocations add concrete value to independent business units through shared infrastructure.</p>
-                </div>
-                <div class="chapter-action">
-                    <span class="badge badge-advanced">Advanced</span>
-                    <span class="arrow-icon">&rarr;</span>
-                </div>
-            </a>
+                <a href="chapter2.html" class="chapter-card">
+                    <div class="chapter-meta">
+                        <span class="chapter-number">Chapter 02</span>
+                        <div class="chapter-heading">Portfolio Management Models</div>
+                        <p class="cell-desc" style="margin-top: 0.25rem;">Practical metric operations tracking the BCG Growth-Share Matrix configurations and GE-McKinsey frameworks.</p>
+                    </div>
+                    <div class="chapter-action">
+                        <span class="tag tag-core">Core</span>
+                        <span style="color: var(--accent); font-weight: bold;">&rarr;</span>
+                    </div>
+                </a>
 
-            <!-- Chapter 4 -->
-            <a href="chapter4.html" class="chapter-card">
-                <div class="chapter-meta">
-                    <span class="chapter-number">Chapter 04</span>
-                    <div class="chapter-title">Mergers, Acquisitions & Divestments</div>
-                    <p class="chapter-desc">Due diligence playbooks, post-merger cultural integrations, and systematic asset carve-out logic.</p>
-                </div>
-                <div class="chapter-action">
-                    <span class="badge badge-advanced">Advanced</span>
-                    <span class="arrow-icon">&rarr;</span>
-                </div>
-            </a>
+                <a href="chapter3.html" class="chapter-card">
+                    <div class="chapter-meta">
+                        <span class="chapter-number">Chapter 03</span>
+                        <div class="chapter-heading">Corporate Parenting & Synergies</div>
+                        <p class="cell-desc" style="margin-top: 0.25rem;">How central hub resources add clear fiscal value to standalone subsidiary segments.</p>
+                    </div>
+                    <div class="chapter-action">
+                        <span class="tag tag-advanced">Advanced</span>
+                        <span style="color: var(--accent); font-weight: bold;">&rarr;</span>
+                    </div>
+                </a>
 
-        </nav>
-    </div>
+                <a href="chapter4.html" class="chapter-card">
+                    <div class="chapter-meta">
+                        <span class="chapter-number">Chapter 04</span>
+                        <div class="chapter-heading">Mergers, Acquisitions & Divestments</div>
+                        <p class="cell-desc" style="margin-top: 0.25rem;">Integration checklists, synergy valuation matrices, and carve-out execution processes.</p>
+                    </div>
+                    <div class="chapter-action">
+                        <span class="tag tag-advanced">Advanced</span>
+                        <span style="color: var(--accent); font-weight: bold;">&rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- PANEL B: MAIN PLATFORM DASHBOARD VIEW -->
+        <!-- Visible default fallback panel layout -->
+        <section id="dashboard-view" class="workspace-panel">
+            <header>
+                <span class="badge">FY2026 / Planning Horizon</span>
+                <h1>Strategic Directives Portal</h1>
+                <p class="subtitle">Centralized architectural notes, execution horizons, and cross-functional performance mappings.</p>
+            </header>
+
+            <div class="grid-container">
+                <!-- Main Focus Column -->
+                <div class="card">
+                    <div class="card-title">Corporate vs Business Differentiation</div>
+                    <p>Corporate directives govern the overarching architectural boundary of our multi-business enterprise. The key focus here centers completely on portfolio resource allocation, parenting advantages, and structural market mapping.</p>
+                    
+                    <!-- Integrated Strategic Interactive Graphic Key Layout -->
+                    <div class="matrix-container">
+                        <div class="matrix-grid">
+                            <div class="matrix-cell high-priority">
+                                <div class="cell-title">Aggressive Reinvestment</div>
+                                <div class="cell-desc">High market growth, dominant absolute positioning.</div>
+                            </div>
+                            <div class="matrix-cell">
+                                <div class="cell-title">Selective Extension</div>
+                                <div class="cell-desc">High growth capability with weak structural scale.</div>
+                            </div>
+                            <div class="matrix-cell">
+                                <div class="cell-title">Harvest / Yield Capture</div>
+                                <div class="cell-desc">Mature business units generating liquid returns.</div>
+                            </div>
+                            <div class="matrix-cell">
+                                <div class="cell-title">Divestment Allocation</div>
+                                <div class="cell-desc">Stagnant segments failing to hurdle WACC metrics.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Conversely, Business Unit actions prioritize building defensible competitive positions inside isolated spaces using differentiation or cost leadership variables.</p>
+                </div>
+
+                <!-- Strategic Accompanying Metadata Column -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <!-- Legend Component Card -->
+                    <div class="card">
+                        <div class="card-title">Framework Legends</div>
+                        <p class="cell-desc" style="margin-bottom: 1rem;">Visual key mapping implementation timeline metrics across current vectors.</p>
+                        <ul class="legend-list">
+                            <li class="legend-item">
+                                <div class="legend-label"><span class="dot" style="background-color: #2563eb;"></span> Horizon 1</div>
+                                <span class="cell-desc">Core Defense</span>
+                            </li>
+                            <li class="legend-item">
+                                <div class="legend-label"><span class="dot" style="background-color: #10b981;"></span> Horizon 2</div>
+                                <span class="cell-desc">Scalable Bets</span>
+                            </li>
+                            <li class="legend-item">
+                                <div class="legend-label"><span class="dot" style="background-color: #f59e0b;"></span> Horizon 3</div>
+                                <span class="cell-desc">Long R&D</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
