@@ -3,444 +3,623 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Strategy Notes Portal</title>
+    <title>Executive Strategy Workspace</title>
     <style>
         :root {
-            --bg-primary: #f8fafc;
-            --bg-sidebar: #0f172a;
-            --text-main: #334155;
-            --text-title: #0f172a;
-            --text-light: #94a3b8;
-            --accent: #2563eb;
-            --accent-light: #dbeafe;
-            --card-bg: #ffffff;
-            --border: #e2e8f0;
+            --bg-base: #0b0f19;
+            --bg-surface: #131a2c;
+            --bg-surface-hover: #1c263f;
+            --border-color: #222f4b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --gold-accent: #c5a880;
+            --gold-glow: rgba(197, 168, 128, 0.15);
+            --blue-accent: #38bdf8;
+            --header-height: 70px;
+            --sidebar-width: 280px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
-            display: flex;
-            background-color: var(--bg-primary);
-            color: var(--text-main);
+            background-color: var(--bg-base);
+            color: var(--text-primary);
             min-height: 100vh;
-        }
-
-        /* --- SIDEBAR PANEL NAVIGATION --- */
-        aside {
-            width: 280px;
-            background-color: var(--bg-sidebar);
-            color: #ffffff;
-            padding: 2rem 1.5rem;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            position: fixed;
-            height: 100vh;
-            z-index: 100;
         }
 
-        .logo-area {
-            font-size: 1.25rem;
+        /* --- PERSISTENT TOP HEADER --- */
+        .master-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .brand-logo {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--gold-accent), #e2d1b9);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--bg-base);
+            font-size: 0.9rem;
+        }
+
+        .brand-name {
+            font-size: 1.15rem;
             font-weight: 700;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            margin-bottom: 2.5rem;
-            color: #f1f5f9;
-            border-bottom: 1px solid #1e293b;
-            padding-bottom: 1rem;
         }
 
-        .nav-group {
-            margin-bottom: 1.5rem;
+        .quick-nav {
+            display: flex;
+            gap: 1.5rem;
         }
 
-        .nav-group-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        /* Pure CSS Routing Tab Targets */
-        .nav-link {
-            display: block;
-            color: #cbd5e1;
+        .quick-nav-btn {
+            color: var(--text-secondary);
             text-decoration: none;
-            padding: 0.75rem 1rem;
-            border-radius: 0.375rem;
-            margin-bottom: 0.25rem;
-            font-size: 0.95rem;
-            transition: all 0.2s;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
         }
 
-        .nav-link:hover {
-            background-color: #1e293b;
-            color: #ffffff;
+        .quick-nav-btn:hover {
+            color: var(--gold-accent);
+            border-color: rgba(197, 168, 128, 0.3);
+            background: var(--gold-glow);
         }
 
-        /* --- DYNAMIC WINDOW AREA WORKSPACE --- */
+        /* --- APP CONTAINER LAYOUT --- */
+        .workspace-body {
+            display: flex;
+            margin-top: var(--header-height);
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        /* --- FIXED LEFT SIDEBAR --- */
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            padding: 2.5rem 1.5rem;
+            position: fixed;
+            top: var(--header-height);
+            bottom: 0;
+            left: 0;
+            z-index: 900;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold-accent);
+            margin-bottom: 0.75rem;
+            padding-left: 0.75rem;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.35rem;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-link:hover {
+            color: var(--text-primary);
+            background-color: var(--bg-surface-hover);
+        }
+
+        /* --- WORKSPACE CORE MAIN STAGE --- */
         main {
-            margin-left: 280px;
+            margin-left: var(--sidebar-width);
             flex-grow: 1;
             padding: 3rem;
-            max-width: 1240px;
-            width: calc(100% - 280px);
+            width: calc(100% - var(--sidebar-width));
         }
 
-        /* Responsive Mobile Architecture */
-        @media (max-width: 968px) {
-            body { flex-direction: column; }
-            aside { width: 100%; height: auto; position: relative; padding: 1.5rem; }
-            main { margin-left: 0; padding: 1.5rem; width: 100%; }
-            .grid-container { grid-template-columns: 1fr !important; }
-        }
-
-        /* CSS Architecture for Content Switching Panels */
-        .workspace-panel {
+        /* --- INTERACTIVE VIEW PANEL ROUTING VIA CSS --- */
+        .view-panel {
             display: none;
+            animation: fadeIn 0.4s ease-out forwards;
         }
-        
-        /* Default visible panel, and targeted visible selectors */
+
         #dashboard-view { display: block; }
         :target { display: block !important; }
         :target ~ #dashboard-view { display: none !important; }
 
-        header {
-            margin-bottom: 2.5rem;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background-color: var(--accent-light);
-            color: var(--accent);
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        h1 {
-            font-size: 2.25rem;
-            color: var(--text-title);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        .subtitle {
-            color: #64748b;
-            margin-top: 0.5rem;
-            font-size: 1.05rem;
-        }
-
-        /* --- GRID PATTERNS & CARDS --- */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-        }
-
-        .card-title {
-            font-size: 1.25rem;
+        /* --- PREMIUM EXECUTIVE TYPOGRAPHY --- */
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--text-title);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-accent);
+            background: var(--gold-glow);
+            padding: 0.35rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
             margin-bottom: 1rem;
         }
 
-        p {
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .lead-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
             line-height: 1.6;
-            color: #475569;
+            margin-bottom: 3rem;
+        }
+
+        /* --- CARDS & GRID INFRASTRUCTURE --- */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .strat-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .strat-card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
             margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        /* --- CSS STRATEGY MATRIX RENDER --- */
-        .matrix-container {
-            background: #f1f5f9;
-            border-radius: 0.5rem;
+        .strat-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.25rem;
+            background: var(--gold-accent);
+            border-radius: 2px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- ARTIFICIAL INTUITIVE MATRIX GRAPHIC (GE-MCKINSEY STYLE) --- */
+        .strategy-matrix-wrapper {
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
 
-        .matrix-grid {
+        .matrix-labels-top {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-            aspect-ratio: 4 / 3;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+            margin-bottom: 0.5rem;
         }
 
-        .matrix-cell {
-            background: #ffffff;
-            border: 2px dashed #cbd5e1;
-            border-radius: 0.375rem;
+        .matrix-grid-structure {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--border-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .matrix-quadrant {
+            background: var(--bg-surface);
+            padding: 1.75rem;
+            min-height: 140px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            text-align: center;
+            transition: background 0.3s ease;
         }
 
-        .matrix-cell.high-priority {
-            background: #eff6ff;
-            border-color: #3b82f6;
-            color: #1d4ed8;
+        .matrix-quadrant:hover {
+            background: var(--bg-surface-hover);
         }
 
-        .cell-title {
+        .matrix-quadrant.premium-focus {
+            background: linear-gradient(145deg, var(--bg-surface), rgba(56, 189, 248, 0.05));
+        }
+
+        .quadrant-heading {
+            font-size: 0.95rem;
             font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
         }
 
-        .cell-desc {
+        .matrix-quadrant.premium-focus .quadrant-heading {
+            color: var(--blue-accent);
+        }
+
+        .quadrant-caption {
             font-size: 0.75rem;
-            color: #64748b;
+            color: var(--text-secondary);
+            line-height: 1.4;
         }
 
-        /* --- STRATEGIC MAP LEGENDS --- */
-        .legend-list { list-style: none; }
-        .legend-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.9rem;
-        }
-        .legend-item:last-child { border-bottom: none; }
-        .legend-label { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; }
-        .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-
-        /* --- TABLE OF CONTENTS PANEL --- */
-        .chapter-list {
+        /* --- CHAPTER DIRECTORY TABLE-OF-CONTENTS --- */
+        .directory-flow {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
-            margin-top: 1rem;
+            gap: 1rem;
         }
 
-        .chapter-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
+        .directory-node {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             padding: 1.5rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             text-decoration: none;
-            color: inherit;
-            transition: all 0.2s ease-in-out;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .chapter-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
+        .directory-node:hover {
+            border-color: var(--gold-accent);
+            background: var(--bg-surface-hover);
+            transform: translateX(4px);
         }
 
-        .chapter-meta {
+        .node-meta-block {
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
         }
 
-        .chapter-number {
-            font-size: 0.8rem;
+        .node-index {
+            font-size: 0.75rem;
             font-weight: 700;
+            color: var(--gold-accent);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: var(--accent);
         }
 
-        .chapter-heading {
-            font-size: 1.25rem;
+        .node-header {
+            font-size: 1.2rem;
             font-weight: 600;
-            color: var(--text-title);
+            color: var(--text-primary);
         }
 
-        .chapter-action {
+        .node-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .node-action-panel {
             display: flex;
             align-items: center;
             gap: 1.5rem;
         }
 
-        .tag {
-            font-size: 0.75rem;
+        .node-indicator {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
             padding: 0.25rem 0.6rem;
-            border-radius: 0.375rem;
+            border-radius: 4px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--blue-accent);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .node-arrow {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            transition: transform 0.2s ease;
+        }
+
+        .directory-node:hover .node-arrow {
+            color: var(--gold-accent);
+            transform: translateX(4px);
+        }
+
+        /* --- LEGEND INTERACTIVE KEYS --- */
+        .legend-slate {
+            list-style: none;
+        }
+
+        .legend-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .legend-row:last-child { border-bottom: none; }
+
+        .legend-tag-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
             font-weight: 600;
         }
-        .tag-core { background: #eff6ff; color: #2563eb; }
-        .tag-advanced { background: #fef3c7; color: #d97706; }
+
+        .signal-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* --- ENTERPRISE MOBILE RESPONSIVE ENGINE --- */
+        @media (max-width: 1024px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            aside {
+                display: none; /* Collapses sidebar menu on mobile layouts */
+            }
+            main {
+                margin-left: 0;
+                width: 100%;
+                padding: 2rem 1rem;
+            }
+            .quick-nav {
+                display: none; /* Relies on standard interactive nodes on touch interfaces */
+            }
+            h1 {
+                font-size: 1.85rem;
+            }
+            .matrix-grid-structure {
+                grid-template-columns: 1fr;
+            }
+            .directory-node {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .node-action-panel {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- --- STATIC LEFT CONTROLLER NAVIGATION --- -->
-    <aside>
-        <div class="logo-area">StrategyHub</div>
+    <!-- --- PERSISTENT MAIN CONTAINER HEADER --- -->
+    <header class="master-header">
+        <a href="#" class="brand-container">
+            <div class="brand-logo">&#931;</div>
+            <span class="brand-name">StrategyHub</span>
+        </a>
         
-        <div class="nav-group">
-            <div class="nav-group-title">Portals</div>
-            <!-- Targets native CSS window ids below -->
-            <a href="#" class="nav-link">Main Dashboard</a>
-            <a href="#corporate-view" class="nav-link">Corporate Strategy</a>
-        </div>
+        <nav class="quick-nav">
+            <a href="#" class="quick-nav-btn">Home Hub</a>
+            <a href="#corporate-view" class="quick-nav-btn">Corporate Strategy</a>
+        </nav>
+    </header>
 
-        <div class="nav-group">
-            <div class="nav-group-title">Framework Layers</div>
-            <a href="#" class="nav-link">Business Strategy</a>
-            <a href="#" class="nav-link">Functional Notes</a>
-        </div>
-    </aside>
+    <div class="workspace-body">
 
-    <!-- --- WORKSPACE CENTRAL PIPELINE --- -->
-    <main>
-        
-        <!-- PANEL A: CORPORATE STRATEGY CHAPTER LIST -->
-        <!-- Opens dynamically when #corporate-view is populated in the browser URL -->
-        <section id="corporate-view" class="workspace-panel">
-            <header>
-                <span class="badge">Enterprise Directory</span>
-                <h1>Corporate Strategy Pillar</h1>
-                <p class="subtitle">Managing multi-business portfolios, cross-unit capital distribution, and corporate parenting infrastructure nodes.</p>
-            </header>
-
-            <div class="chapter-list">
-                <!-- Update href configurations to point directly to your localized chapter files -->
-                <a href="chapter1.html" class="chapter-card">
-                    <div class="chapter-meta">
-                        <span class="chapter-number">Chapter 01</span>
-                        <div class="chapter-heading">Defining Corporate Scope</div>
-                        <p class="cell-desc" style="margin-top: 0.25rem;">Analyses of vertical integration, diversification boundaries, and global geographic market footprints.</p>
-                    </div>
-                    <div class="chapter-action">
-                        <span class="tag tag-core">Core</span>
-                        <span style="color: var(--accent); font-weight: bold;">&rarr;</span>
-                    </div>
-                </a>
-
-                <a href="chapter2.html" class="chapter-card">
-                    <div class="chapter-meta">
-                        <span class="chapter-number">Chapter 02</span>
-                        <div class="chapter-heading">Portfolio Management Models</div>
-                        <p class="cell-desc" style="margin-top: 0.25rem;">Practical metric operations tracking the BCG Growth-Share Matrix configurations and GE-McKinsey frameworks.</p>
-                    </div>
-                    <div class="chapter-action">
-                        <span class="tag tag-core">Core</span>
-                        <span style="color: var(--accent); font-weight: bold;">&rarr;</span>
-                    </div>
-                </a>
-
-                <a href="chapter3.html" class="chapter-card">
-                    <div class="chapter-meta">
-                        <span class="chapter-number">Chapter 03</span>
-                        <div class="chapter-heading">Corporate Parenting & Synergies</div>
-                        <p class="cell-desc" style="margin-top: 0.25rem;">How central hub resources add clear fiscal value to standalone subsidiary segments.</p>
-                    </div>
-                    <div class="chapter-action">
-                        <span class="tag tag-advanced">Advanced</span>
-                        <span style="color: var(--accent); font-weight: bold;">&rarr;</span>
-                    </div>
-                </a>
-
-                <a href="chapter4.html" class="chapter-card">
-                    <div class="chapter-meta">
-                        <span class="chapter-number">Chapter 04</span>
-                        <div class="chapter-heading">Mergers, Acquisitions & Divestments</div>
-                        <p class="cell-desc" style="margin-top: 0.25rem;">Integration checklists, synergy valuation matrices, and carve-out execution processes.</p>
-                    </div>
-                    <div class="chapter-action">
-                        <span class="tag tag-advanced">Advanced</span>
-                        <span style="color: var(--accent); font-weight: bold;">&rarr;</span>
-                    </div>
-                </a>
+        <!-- --- STATIC COMPONENT LEFT NAVIGATION --- -->
+        <aside>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Core Mandates</div>
+                <a href="#" class="sidebar-link">Workspace Dashboard</a>
+                <a href="#corporate-view" class="sidebar-link">Corporate Strategy</a>
             </div>
-        </section>
 
+            <div class="sidebar-section">
+                <div class="sidebar-title">Business Frameworks</div>
+                <a href="#" class="sidebar-link">Competitive Positioning</a>
+                <a href="#" class="sidebar-link">Functional Alignment</a>
+            </div>
+        </aside>
 
-        <!-- PANEL B: MAIN PLATFORM DASHBOARD VIEW -->
-        <!-- Visible default fallback panel layout -->
-        <section id="dashboard-view" class="workspace-panel">
-            <header>
-                <span class="badge">FY2026 / Planning Horizon</span>
-                <h1>Strategic Directives Portal</h1>
-                <p class="subtitle">Centralized architectural notes, execution horizons, and cross-functional performance mappings.</p>
-            </header>
+        <!-- --- DYNAMIC CENTRAL CONTROL WINDOW --- -->
+        <main>
 
-            <div class="grid-container">
-                <!-- Main Focus Column -->
-                <div class="card">
-                    <div class="card-title">Corporate vs Business Differentiation</div>
-                    <p>Corporate directives govern the overarching architectural boundary of our multi-business enterprise. The key focus here centers completely on portfolio resource allocation, parenting advantages, and structural market mapping.</p>
-                    
-                    <!-- Integrated Strategic Interactive Graphic Key Layout -->
-                    <div class="matrix-container">
-                        <div class="matrix-grid">
-                            <div class="matrix-cell high-priority">
-                                <div class="cell-title">Aggressive Reinvestment</div>
-                                <div class="cell-desc">High market growth, dominant absolute positioning.</div>
+            <!-- ================= VIEW PANEL A: CORPORATE STRATEGY LIST ================= -->
+            <section id="corporate-view" class="view-panel">
+                <div class="section-badge">Portfolio Architecture</div>
+                <h1>Corporate Strategy</h1>
+                <p class="lead-text">Strategic notes defining structural market configurations, diversification bounds, and capital market resource vectors across business groups.</p>
+
+                <div class="directory-flow">
+                    <!-- Link directly to your standalone files using the href values below -->
+                    <a href="chapter1.html" class="directory-node">
+                        <div class="node-meta-block">
+                            <span class="node-index">Chapter 01</span>
+                            <div class="node-header">Defining Corporate Scope</div>
+                            <div class="node-desc">Analytical playbooks on market boundary diversification limits and vertical integration metrics.</div>
+                        </div>
+                        <div class="node-action-panel">
+                            <span class="node-indicator">Core Group</span>
+                            <span class="node-arrow">&rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="chapter2.html" class="directory-node">
+                        <div class="node-meta-block">
+                            <span class="node-index">Chapter 02</span>
+                            <div class="node-header">Portfolio Management Matrices</div>
+                            <div class="node-desc">Practical configurations using real-time models tracking capital deployment vectors.</div>
+                        </div>
+                        <div class="node-action-panel">
+                            <span class="node-indicator">Core Group</span>
+                            <span class="node-arrow">&rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="chapter3.html" class="directory-node">
+                        <div class="node-meta-block">
+                            <span class="node-index">Chapter 03</span>
+                            <div class="node-header">Corporate Parenting Advantages</div>
+                            <div class="node-desc">Methods for optimizing centralized corporate services to cross-subsidize business segments.</div>
+                        </div>
+                        <div class="node-action-panel">
+                            <span class="node-indicator" style="color:#c5a880; background:var(--gold-glow); border-color:rgba(197,168,128,0.2)">Advanced</span>
+                            <span class="node-arrow">&rarr;</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ================= VIEW PANEL B: CENTRAL HOME HUB ================= -->
+            <section id="dashboard-view" class="view-panel">
+                <div class="section-badge">Executive Control Panel</div>
+                <h1>Strategic Architectures Portal</h1>
+                <p class="lead-text">A modern repository hosting corporate alignment configurations, performance metrics, and tactical business frameworks.</p>
+
+                <div class="layout-grid">
+                    <!-- Strategic Focus Window -->
+                    <div class="strat-card">
+                        <div class="strat-card-title">Framework Horizon Configurations</div>
+                        <p>Corporate decisions manage long-term portfolio configuration and enterprise parameters. Conversely, Business Unit strategies address local actions required to construct sustainable competitive differentiation paths within isolated spaces.</p>
+                        
+                        <!-- Premium Embedded Matrix Engine Graphics -->
+                        <div class="strategy-matrix-wrapper">
+                            <div class="matrix-labels-top">
+                                <div>High Industry Growth</div>
+                                <div>Low Industry Growth</div>
                             </div>
-                            <div class="matrix-cell">
-                                <div class="cell-title">Selective Extension</div>
-                                <div class="cell-desc">High growth capability with weak structural scale.</div>
-                            </div>
-                            <div class="matrix-cell">
-                                <div class="cell-title">Harvest / Yield Capture</div>
-                                <div class="cell-desc">Mature business units generating liquid returns.</div>
-                            </div>
-                            <div class="matrix-cell">
-                                <div class="cell-title">Divestment Allocation</div>
-                                <div class="cell-desc">Stagnant segments failing to hurdle WACC metrics.</div>
+                            <div class="matrix-grid-structure">
+                                <div class="matrix-quadrant premium-focus">
+                                    <div class="quadrant-heading">Aggressive Reinvestment</div>
+                                    <div class="quadrant-caption">Allocate primary capital reserves here to exploit clear market leadership positions.</div>
+                                </div>
+                                <div class="matrix-quadrant">
+                                    <div class="quadrant-heading">Selective Pivot</div>
+                                    <div class="quadrant-caption">Monitor conversion targets carefully before authorizing broad capital injections.</div>
+                                </div>
+                                <div class="matrix-quadrant">
+                                    <div class="quadrant-heading">Harvest Cashflow</div>
+                                    <div class="quadrant-caption">Extract high residual yield value while holding back major operational investments.</div>
+                                </div>
+                                <div class="matrix-quadrant">
+                                    <div class="quadrant-heading">Divest / Liquify</div>
+                                    <div class="quadrant-caption">Systematically carve out or sunset legacy systems failing to meet hurdle parameters.</div>
+                                </div>
                             </div>
                         </div>
+
+                        <p>Toggle your navigation options or dive deep directly into your custom chapter structures inside the Corporate Strategy portal to adjust raw data points.</p>
                     </div>
 
-                    <p>Conversely, Business Unit actions prioritize building defensible competitive positions inside isolated spaces using differentiation or cost leadership variables.</p>
-                </div>
-
-                <!-- Strategic Accompanying Metadata Column -->
-                <div style="display: flex; flex-direction: column; gap: 2rem;">
-                    <!-- Legend Component Card -->
-                    <div class="card">
-                        <div class="card-title">Framework Legends</div>
-                        <p class="cell-desc" style="margin-bottom: 1rem;">Visual key mapping implementation timeline metrics across current vectors.</p>
-                        <ul class="legend-list">
-                            <li class="legend-item">
-                                <div class="legend-label"><span class="dot" style="background-color: #2563eb;"></span> Horizon 1</div>
-                                <span class="cell-desc">Core Defense</span>
-                            </li>
-                            <li class="legend-item">
-                                <div class="legend-label"><span class="dot" style="background-color: #10b981;"></span> Horizon 2</div>
-                                <span class="cell-desc">Scalable Bets</span>
-                            </li>
-                            <li class="legend-item">
-                                <div class="legend-label"><span class="dot" style="background-color: #f59e0b;"></span> Horizon 3</div>
-                                <span class="cell-desc">Long R&D</span>
-                            </li>
-                        </ul>
+                    <!-- Side Metadata Asset Container -->
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div class="strat-card">
+                            <div class="strat-card-title">Execution Tracking Legends</div>
+                            <p style="font-size: 0.8rem; margin-bottom: 1rem;">Internal tracking markers measuring resource allocations across separate timelines:</p>
+                            
+                            <ul class="legend-slate">
+                                <li class="legend-row">
+                                    <div class="legend-tag-title">
+                                        <span class="signal-pulse" style="background-color: var(--blue-accent);"></span> Horizon 01
+                                    </div>
+                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Core Defense</div>
+                                </li>
+                                <li class="legend-row">
+                                    <div class="legend-tag-title">
+                                        <span class="signal-pulse" style="background-color: #10b981;"></span> Horizon 02
+                                    </div>
+                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Scalable Bets</div>
+                                </li>
+                                <li class="legend-row">
+                                    <div class="legend-tag-title">
+                                        <span class="signal-pulse" style="background-color: var(--gold-accent);"></span> Horizon 03
+                                    </div>
+                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Long Range R&D</div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>
