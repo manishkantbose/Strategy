@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Strategy & Diversification — Complete Notes (with Alphabet Case)</title>
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --paper: #ffffff;
+    --ink: #2b2b2b;
+    --accent: #1f5fa8;
+    --accent-soft: #e8f0fb;
+    --accent2: #c0392b;
+    --accent2-soft: #fbeceb;
+    --green: #1e8e5a;
+    --green-soft: #e7f6ef;
+    --gold: #b8860b;
+    --gold-soft: #fbf3e0;
+    --purple: #6c4f9c;
+    --purple-soft: #f0ebf8;
+    --border: #ddd6c9;
+    --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  header.title-block {
+    text-align: center;
+    padding: 28px 16px 24px;
+    border-bottom: 4px solid var(--accent);
+    margin-bottom: 32px;
+  }
+
+  header.title-block h1 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2.1rem;
+    letter-spacing: 0.5px;
+    margin: 0 0 6px;
+    color: var(--accent);
+  }
+
+  header.title-block p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  header.title-block .case-tag {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--purple);
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.78rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Table of contents */
+  nav.toc {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 24px;
+    margin-bottom: 36px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  nav.toc h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 32px; }
+  nav.toc li { margin-bottom: 6px; font-size: 0.95rem; }
+  nav.toc a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted #999; }
+  nav.toc a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  section {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+
+  h2.section-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin-top: 0;
+    border-bottom: 2px solid var(--accent-soft);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2.section-title .num {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  h3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #444;
+    font-size: 1.1rem;
+    margin: 22px 0 8px;
+  }
+
+  h4 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--accent2);
+    font-size: 1rem;
+    margin: 16px 0 6px;
+  }
+
+  p { margin: 8px 0; }
+
+  ul, ol { padding-left: 22px; margin: 8px 0; }
+  li { margin-bottom: 4px; }
+
+  .callout {
+    border-left: 4px solid var(--gold);
+    background: var(--gold-soft);
+    padding: 10px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+    font-size: 0.96rem;
+  }
+  .callout strong { color: var(--gold); }
+
+  .key {
+    border-left: 4px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 10px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+    font-size: 0.96rem;
+  }
+  .key strong { color: var(--accent); }
+
+  .warn {
+    border-left: 4px solid var(--accent2);
+    background: var(--accent2-soft);
+    padding: 10px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+    font-size: 0.96rem;
+  }
+  .warn strong { color: var(--accent2); }
+
+  .example {
+    border-left: 4px solid var(--green);
+    background: var(--green-soft);
+    padding: 10px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+    font-size: 0.96rem;
+  }
+  .example strong { color: var(--green); }
+
+  .case {
+    border-left: 4px solid var(--purple);
+    background: var(--purple-soft);
+    padding: 10px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+    font-size: 0.96rem;
+  }
+  .case strong { color: var(--purple); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 0.92rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) td { background: #faf9f5; }
+
+  .pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 0.78rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0 4px 4px 0;
+  }
+  .pill.alt { background: var(--green); }
+  .pill.alt2 { background: var(--accent2); }
+  .pill.alt3 { background: var(--gold); }
+  .pill.alt4 { background: var(--purple); }
+
+  .diagram-box {
+    background: #fcfcfa;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 14px 0;
+    overflow-x: auto;
+  }
+
+  code {
+    font-family: var(--mono);
+    background: #f1efe8;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 0.88em;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 14px 0;
+  }
+  .grid-2 > div {
+    background: #fcfcfa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .grid-2 h4 { margin-top: 0; }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+  }
+  .grid-3 > div {
+    background: #fcfcfa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .grid-3 h4 { margin-top: 0; font-size: 0.92rem; }
+
+  @media (max-width: 640px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    nav.toc ol { columns: 1; }
+    section { padding: 20px 16px; }
+  }
+
+  footer {
+    text-align: center;
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 24px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .matrix-svg { display: block; margin: 14px auto; max-width: 100%; }
+
+  .timeline {
+    border-left: 3px solid var(--accent);
+    margin: 14px 0 14px 10px;
+    padding-left: 20px;
+  }
+  .timeline .event {
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .timeline .event::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .timeline .date {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    color: var(--accent);
+    font-size: 0.88rem;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--border);
+    margin: 12px 0;
+    padding: 6px 0 6px 16px;
+    font-style: italic;
+    color: #555;
+  }
+
+  .source-note {
+    font-size: 0.8rem;
+    color: #999;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="title-block">
+  <h1>Corporate Strategy &amp; Diversification</h1>
+  <p>Lecture Notes — Frameworks, Case Application &amp; Real-World Context</p>
+  <span class="case-tag">HBS Case: Alphabet Eyes New Frontiers (A) · 717-418</span>
+</header>
+
+<nav class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#sec1">NEST &amp; the Better-Off Test — First Pass</a></li>
+    <li><a href="#sec2">Google's Core Business &amp; Two-Sided Platform</a></li>
+    <li><a href="#sec3">Diversification Tests (Porter's Framework)</a></li>
+    <li><a href="#sec4">3 Tenets of Corporate Strategy</a></li>
+    <li><a href="#sec5">Types &amp; Levels of Diversification</a></li>
+    <li><a href="#sec6">Org Designs &amp; M-Form Variants</a></li>
+    <li><a href="#sec7">Unrelated Diversification &amp; BCG Matrix</a></li>
+    <li><a href="#sec8">Two Ways of Adding Value + Thick/Thin HQ</a></li>
+    <li><a href="#sec9">Diversification Premium vs Discount</a></li>
+    <li><a href="#sec10">Legal Structures: Holding Co, Subsidiary, SBU</a></li>
+    <li><a href="#sec11">CASE: Alphabet Eyes New Frontiers — Background</a></li>
+    <li><a href="#sec12">CASE: The 2015 Restructuring — Why &amp; How</a></li>
+    <li><a href="#sec13">CASE: Nest — A Diversification Story Gone Wrong?</a></li>
+    <li><a href="#sec14">CASE: Other Moonshots &amp; Comparisons</a></li>
+    <li><a href="#sec15">CASE: Financials &amp; Investor Reaction</a></li>
+    <li><a href="#sec16">Berkshire Hathaway Lens — Real-World Benchmark</a></li>
+    <li><a href="#sec17">Master Summary Table (Master Chart)</a></li>
+    <li><a href="#sec18">Exam-Ready Synthesis &amp; Discussion Questions</a></li>
+  </ol>
+</nav>
+
+<!-- SECTION 1 -->
+<section id="sec1">
+  <h2 class="section-title"><span class="num">1</span>NEST &amp; the Better-Off Test — First Pass</h2>
+  <p><strong>Context:</strong> Google's acquisition of Nest (smart-home business), <strong>January 2014</strong> — for <strong>$3.2 billion</strong>, the second-largest purchase in the company's history at the time.</p>
+
+  <h3>Acquisition Framework Applied</h3>
+  <div class="grid-2">
+    <div>
+      <h4>① Attractiveness</h4>
+      <p>The smart-home market was considered attractive — "the conscious home" — Internet-connected thermostats and smoke alarms.</p>
+    </div>
+    <div>
+      <h4>② Cost of Entry</h4>
+      <p>$3.2B premium to enter rather than building organically — a steep cost of entry signal.</p>
+    </div>
+  </div>
+
+  <h3>③ Better-Off Test — Why Nest Specifically?</h3>
+  <p>Three resources Google brought to Nest that made the combination "better off" together:</p>
+  <ul>
+    <li><span class="pill">Funds → "Financial deep pocket"</span> — Google's capital fuels Nest's growth.</li>
+    <li><span class="pill alt">Parenting Advantage → "Software prowess"</span> — Google's software expertise complements Nest's hardware.</li>
+    <li><span class="pill alt2">Talent &amp; Innovation Mindset</span></li>
+  </ul>
+
+  <div class="case">
+    <strong>Case Evidence (Fadell, Nest founder, at acquisition):</strong> "I was spending so much time in my days just worrying about infrastructure and not worrying about product. This allows us to concentrate on the stuff that differentiates us." — Fadell explicitly described Google providing Nest <em>financial, legal, and administrative resources</em> to help it grow. This is the Better-Off Test playing out in real life.
+  </div>
+
+  <div class="callout">
+    <strong>Historical analogy from class:</strong> Just as <em>Bell Labs invented the transistor</em>, but it was <em>Intel that commercialized it</em> — the originator of an idea isn't always the best at scaling it. A resource-rich parent (Google) can take a promising but resource-constrained innovator (Nest) and scale it.
+  </div>
+
+  <h3>How the Story Actually Played Out (Foreshadowing Section 13)</h3>
+  <div class="warn">
+    <strong>Spoiler from the case:</strong> Despite the textbook logic of the Better-Off Test, Nest's revenues ($340M in 2015) lagged expectations, 70 employees left between spring and fall 2015, founder Tony Fadell departed in June 2016, and Nest shut down its 2014 Revolv acquisition entirely. The "better-off" rationale at deal time doesn't guarantee post-acquisition integration success — <strong>cultural fit and autonomy design matter as much as resource complementarity.</strong>
+  </div>
+
+  <div class="key">
+    <strong>Takeaway:</strong> An acquisition decision passes through Attractiveness → Cost of Entry → Better-Off Test — but the case shows this is necessary, not sufficient. Execution and organizational design determine whether the "better-off" logic is realized.
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="sec2">
+  <h2 class="section-title"><span class="num">2</span>Google's Core Business &amp; Two-Sided Platform</h2>
+
+  <h3>Business Model</h3>
+  <div class="diagram-box">
+    <p style="text-align:center; font-family: 'Helvetica Neue', sans-serif;">
+      <strong>Customers</strong> ⟸ <strong>Search Engine</strong> ⟹ <strong>Advertisers</strong>
+    </p>
+  </div>
+  <ul>
+    <li><strong>Business:</strong> Search Engine</li>
+    <li><strong>Platform type:</strong> Two-sided platform — attracts <em>Customers</em> (searchers) and <em>Advertisers</em> as two distinct groups.</li>
+  </ul>
+
+  <div class="key">
+    <strong>Indexing algorithm improves when more customers search</strong> — a classic <em>data network effect</em>: more queries → better indexing/relevance → better product → more users → more advertisers.
+  </div>
+
+  <h3>Scale, c. 2015 (from the case)</h3>
+  <table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>U.S. search market share (2015)</td><td>64% (next competitor &lt;20%)</td></tr>
+    <tr><td>Total revenue (2015)</td><td>~$75 billion</td></tr>
+    <tr><td>Total assets (Dec 2015)</td><td>$147 billion</td></tr>
+    <tr><td>Ad revenue as % of total revenue (2015)</td><td>~90%</td></tr>
+    <tr><td>Ad revenue % (2012, for comparison)</td><td>~95%</td></tr>
+  </table>
+
+  <h3>Key Acquisitions</h3>
+  <table>
+    <tr><th>Acquisition</th><th>Year</th><th>Price</th><th>Category</th></tr>
+    <tr><td>Android</td><td>2005</td><td>~$50 million</td><td>Mobile Operating System</td></tr>
+    <tr><td>YouTube</td><td>2006</td><td>$1.65 billion (stock)</td><td>User-Generated Video (UGC)</td></tr>
+    <tr><td>DoubleClick</td><td>2007</td><td>$3.1 billion (cash, &gt;20x revenue)</td><td>Online Advertising</td></tr>
+    <tr><td>Nest</td><td>2014</td><td>$3.2 billion</td><td>Smart Home</td></tr>
+    <tr><td>DeepMind</td><td>2014</td><td>—</td><td>Artificial Intelligence</td></tr>
+    <tr><td>Boston Dynamics</td><td>2013 (sold 2016)</td><td>—</td><td>Robotics</td></tr>
+  </table>
+
+  <h3>Strategic Logic: Android</h3>
+  <div class="callout">
+    <strong>Logic chain:</strong> Higher mobile penetration → more mobile Android devices in use → more mobile searches → feeds Google's core search/ads engine.
+  </div>
+  <div class="case">
+    <strong>Case quote (Hiroshi Lockheimer, VP Engineering, Android):</strong> "The bet that Larry, Sergey, and Eric made at the time was that smartphones are going to be a thing, there's going to be Internet on it, so let's make sure there's a great smartphone platform out there that people can use to, among other things, access Google services."<br><br>
+    <strong>Risk that materialized:</strong> By late 2014, ~30% of Android smartphones shipped were "forked" (modified) versions that may not host Google's apps/services — a real threat to the "Android feeds Search" logic chain.
+  </div>
+
+  <h3>Strategic Logic: YouTube</h3>
+  <ul>
+    <li><strong>Use:</strong> User-generated video content platform.</li>
+    <li><strong>Risk (at acquisition, 2006):</strong> "Significant doubt as to whether user-generated content sites would attract top advertisers." Many were "perplexed by the high price Google paid for a company with a string of losses and no clear path to profitability."</li>
+    <li><strong>Outcome (by 2016):</strong> "Generally viewed as successful, with YouTube's annual ad revenues estimated at several times the 2006 purchase price" — though "the unit's overall contribution to Alphabet remained unclear" (segment reporting opacity, see Section 15).</li>
+  </ul>
+
+  <h3>Demand-Side Externality</h3>
+  <div class="key">
+    <strong>Growth in customer base → attracts more advertisers</strong> (two-sided network effect). A bigger user base on Android/YouTube indirectly strengthens Google's advertiser-side value proposition.
+  </div>
+
+  <div class="warn">
+    <strong>Important nuance:</strong> Customers of Android &amp; YouTube are <em>not directly aware</em> they are "customers of Google" — the connection to the parent is invisible to end users, even though strategically these acquisitions feed the core ad business.
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section id="sec3">
+  <h2 class="section-title"><span class="num">3</span>Diversification Tests (Porter's Framework)</h2>
+  <p>Used to evaluate whether a firm should enter a new business/market — formalized by Michael Porter.</p>
+
+  <h3>The Three Tests</h3>
+  <ol>
+    <li><strong>Attractiveness Test</strong> — Is the industry structurally attractive (or can it be made attractive)?</li>
+    <li><strong>Cost of Entry Test</strong> — Does the cost of entry capitalize all future profits?</li>
+    <li><strong>Better-Off Test</strong> — Will either the new unit or the corporation gain a competitive advantage from the link?</li>
+  </ol>
+
+  <div class="key">
+    <strong>Relationship rule:</strong> If Attractiveness is <strong>high</strong>, Cost of Entry is also typically <strong>high</strong> — attractive markets are expensive to enter (competitors bid up the price; barriers rise).
+  </div>
+
+  <h3>Role of Porter's 5 Forces</h3>
+  <div class="diagram-box">
+    Porter's 5 Forces → provides a <strong>snapshot</strong> of competitive forces at a point in time.<br>
+    ⚠️ <strong>Not a long-term/static strategy tool</strong> — when conditions change, the analysis must be <strong>re-evaluated</strong>.
+  </div>
+  <div class="warn">
+    <strong>Caution:</strong> Strategies built on a single 5-Forces snapshot are <em>only short-term strategies</em> — even long-term attractiveness needs continual re-justification as forces shift.
+  </div>
+
+  <h3>The Better-Off Test — Two Pillars</h3>
+
+  <h4>(i) Economies of Scope</h4>
+  <p>Sharing/leveraging resources across businesses:</p>
+  <table>
+    <tr><th>Tangible Resources</th><th>Intangible Resources</th></tr>
+    <tr><td>Distribution networks, IT/infrastructure</td><td>Technology, Brand, Reputation</td></tr>
+  </table>
+
+  <h4>(ii) Organizational Capabilities</h4>
+  <p>The firm's ability to leverage capabilities to create:</p>
+  <ul>
+    <li>New Products</li>
+    <li>New Brands</li>
+  </ul>
+  <p>(Feedback loop: capabilities enable new products/brands, which build further capability.)</p>
+
+  <div class="case">
+    <strong>Case application — Google's organizational capability:</strong> Google's famous <strong>"20% time"</strong> policy (spend 20% of time on what employees think will most benefit Google) produced AdSense (≈25% of Google's annual revenue), Gmail, Google News, and even the commuter buses. This is an organizational capability — a culture/process for generating new products — not just a one-off resource.
+  </div>
+
+  <h3>Checking Returns — Financial Lens</h3>
+  <div class="callout">
+    <strong>Check the returns of different businesses and compare them with the Cost of Capital</strong> — across two financing sources: <strong>Debt</strong> and <strong>Equity</strong>. A diversification move is justified only if expected returns clear the relevant hurdle.
+  </div>
+  <div class="case">
+    <strong>Case tension:</strong> Alphabet's <strong>Other Bets</strong> segment posted an operating loss of <strong>$3.6 billion in 2015</strong> on revenues of just <strong>$448 million</strong> (0.6% of consolidated revenues) — almost entirely "pre-revenue." Whether this passes a Better-Off / Cost-of-Capital test is exactly the ambiguity investors and analysts struggled with.
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section id="sec4">
+  <h2 class="section-title"><span class="num">4</span>3 Tenets of Corporate Strategy</h2>
+  <p><em>Date in notes: 09/06/26</em> — Topic: <strong>Alphabet → Google</strong></p>
+
+  <div class="key">
+    <strong>Alphabet's Dominant Growth Strategy:</strong> Diversification — largely <em>Product Diversification</em>.
+  </div>
+
+  <h3>Tenet 1 — Corporates don't compete; their Business Units do</h3>
+  <p>"Corporates do not compete — it is their business units that compete."</p>
+  <div class="example">
+    <strong>Example:</strong> Alphabet (corporate) doesn't directly "compete" — its business units (YouTube, DoubleClick, Android, Nest, Waymo) compete in their respective markets, each against very different rivals (YouTube vs. Netflix/TikTok; Android vs. iOS; Nest vs. Ecobee/Amazon).
+  </div>
+
+  <h3>Tenet 2 — Diversification adds Costs AND Constraints to Business Units</h3>
+  <div class="diagram-box">
+    <strong>Costs:</strong>
+    <ul>
+      <li><strong>Obvious Costs</strong> → Corporate Overhead (Housing, Admin, Legal, etc.)</li>
+      <li><strong>Hidden Costs</strong> → Coordination Costs (loss of independence for individual BUs)</li>
+    </ul>
+    <strong>ESOPs (Employee Stock Ownership Plans):</strong>
+    <ul>
+      <li>Affect <strong>cashflow</strong></li>
+      <li>Help <strong>align incentives</strong> between the company and employees</li>
+    </ul>
+  </div>
+
+  <div class="case">
+    <strong>Case evidence — "Hidden coordination costs" made visible:</strong> In November 2015, the WSJ reported that Alphabet would <strong>charge "Other Bets" subsidiaries for corporate-wide services</strong> (computing, recruiting, marketing) — an attempt to make the hidden coordination costs <em>explicit</em> and improve accountability. This is a textbook example of converting hidden coordination costs into obvious, chargeable costs.
+  </div>
+
+  <h3>Tenet 3 — Shareholders Can Readily Diversify Themselves</h3>
+  <div class="warn">
+    <strong>Key implication:</strong> Investors can invest in other businesses directly to diversify their own portfolios — so the <em>corporate itself does not need to diversify</em> purely to provide diversification benefits to shareholders. Diversification at the corporate level must add value <em>beyond</em> what shareholders could achieve on their own.
+  </div>
+  <div class="case">
+    <strong>Case tension:</strong> This is precisely the question the case poses at the end — "Was Alphabet providing the resources startup ventures desperately needed to succeed, or would the conglomerate structure stifle innovation?" If shareholders could simply invest directly in a self-driving car startup, what does bundling it inside Alphabet add?
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section id="sec5">
+  <h2 class="section-title"><span class="num">5</span>Types &amp; Levels of Diversification</h2>
+
+  <h3>4 Kinds of Diversification</h3>
+  <table>
+    <tr><th>Type</th><th>Description</th><th>Alphabet-era Example</th></tr>
+    <tr><td><strong>Single</strong></td><td>Zero diversification — &gt;95% of business from primary product/segment</td><td>Google pre-2008 (~95%+ ad revenue)</td></tr>
+    <tr><td><strong>Dominant</strong></td><td>70–95% revenue from primary; rest from secondary</td><td>Google in 2015 (~90% ads, ~10% other Google products)</td></tr>
+    <tr><td><strong>Related</strong></td><td>&lt;70% from primary; secondary businesses linked to/sharing resources with primary</td><td>If Other Bets scaled up while still leveraging Google's infrastructure/talent</td></tr>
+    <tr><td><strong>Unrelated</strong></td><td>&lt;70% from primary; little to no resource sharing/linkage (Conglomerate)</td><td>Calico (longevity research) vs. Search — almost no operational overlap</td></tr>
+  </table>
+
+  <h3>Classification Based on Revenue Mix (Primary vs Secondary)</h3>
+
+  <h4>Dominant</h4>
+  <ul>
+    <li>70–90% (approx.) of revenue from the <strong>primary</strong> business</li>
+    <li>Rest from <strong>secondary</strong> business(es)</li>
+    <li>Secondary is <strong>linked to</strong> primary and they are <strong>sharing resources</strong></li>
+  </ul>
+  <div class="case">
+    <strong>Case data point:</strong> In 2015, Alphabet's "Google" segment generated <strong>$74,541M</strong> of <strong>$74,989M</strong> total revenue — i.e. <strong>~99.4%</strong> from the core segment, with "Other Bets" contributing only <strong>$448M (~0.6%)</strong>. By the strict revenue-mix definition, Alphabet in 2015 was still firmly in the <strong>"Single"</strong> category by revenue — even though strategically it behaved like a diversified conglomerate (in terms of management attention, R&amp;D spend at 12-15% of revenue, and number of distinct businesses).
+  </div>
+  <div class="warn">
+    <strong>Important nuance:</strong> Revenue-based classification can understate strategic diversification — Alphabet's R&amp;D intensity (12% of revenue in 2014, the highest since its 2004 IPO, totaling $9.8B) and the sheer number of distinct ventures (Nest, Verily, Calico, X, Fiber, Sidewalk Labs, DeepMind, GV, Google Capital) signal a much higher <em>strategic</em> diversification level than the revenue split alone suggests.
+  </div>
+
+  <h4>Related</h4>
+  <ul>
+    <li>Subtypes: <span class="pill">Constrained</span> <span class="pill alt">Linked</span></li>
+  </ul>
+  <div class="diagram-box">
+    <strong>Constrained:</strong> Few secondary businesses, <em>strongly</em> tied to the primary business; primary <em>constrains</em> what diversification is feasible.<br><br>
+    <strong>Linked:</strong> Primary → Secondary → Tertiary — a <em>chain</em> of linkages, each business connected to the next, not necessarily all tied directly back to the core.
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section id="sec6">
+  <h2 class="section-title"><span class="num">6</span>Org Designs &amp; M-Form Variants</h2>
+
+  <p>Visual models for related diversification org structures:</p>
+
+  <div class="diagram-box">
+    <svg class="matrix-svg" viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" width="100%" height="260">
+      <style>
+        .lbl{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;fill:#2b2b2b;}
+        .box{fill:#e8f0fb;stroke:#1f5fa8;stroke-width:1.5;}
+        .cbox{fill:#fbf3e0;stroke:#b8860b;stroke-width:1.5;}
+        .line{stroke:#999;stroke-width:1.5;fill:none;}
+      </style>
+      <text x="60" y="22" class="lbl" font-weight="bold">Constrained (M-form)</text>
+      <rect x="80" y="40" width="60" height="30" class="cbox" rx="4"/>
+      <text x="110" y="60" class="lbl" text-anchor="middle">C</text>
+      <rect x="40" y="110" width="60" height="30" class="box" rx="4"/>
+      <text x="70" y="130" class="lbl" text-anchor="middle">BU</text>
+      <rect x="130" y="110" width="60" height="30" class="box" rx="4"/>
+      <text x="160" y="130" class="lbl" text-anchor="middle">BU</text>
+      <path class="line" d="M100,70 L70,110"/>
+      <path class="line" d="M120,70 L160,110"/>
+      <path class="line" d="M70,140 L70,150 L160,150 L160,140" />
+      <text x="115" y="170" class="lbl" text-anchor="middle" font-size="12">tightly linked / shared</text>
+
+      <text x="430" y="22" class="lbl" font-weight="bold">Linked (M-form)</text>
+      <rect x="450" y="40" width="60" height="30" class="cbox" rx="4"/>
+      <text x="480" y="60" class="lbl" text-anchor="middle">C</text>
+      <rect x="400" y="110" width="60" height="30" class="box" rx="4"/>
+      <text x="430" y="130" class="lbl" text-anchor="middle">BU</text>
+      <rect x="500" y="110" width="60" height="30" class="box" rx="4"/>
+      <text x="530" y="130" class="lbl" text-anchor="middle">BU</text>
+      <path class="line" d="M470,70 L430,110"/>
+      <path class="line" d="M490,70 L530,110"/>
+      <path class="line" d="M460,125 L500,125" stroke-dasharray="4,3"/>
+      <text x="480" y="170" class="lbl" text-anchor="middle" font-size="12">partial / chain linkage</text>
+    </svg>
+  </div>
+
+  <h3>Organizational Designs — A Spectrum</h3>
+  <ol>
+    <li><strong>Simple</strong> — No formal structure; not divided into several functions.</li>
+    <li><strong>Functional Structure</strong> — Organized by function (marketing, finance, ops, etc.)</li>
+    <li><strong>Divisional / Multi-divisional (M-form)</strong> — SBUs (Strategic Business Units) = divisions with separate P&amp;L accounts.</li>
+    <li><strong>Matrix</strong></li>
+  </ol>
+
+  <h3>Matrix Sub-types</h3>
+  <table>
+    <tr><th>Type</th><th>Visual Pattern</th><th>Description</th></tr>
+    <tr><td><strong>Competitive M-form</strong></td><td>C → BU, BU (parallel, independent)</td><td>Business Units largely operate independently/competitively under corporate</td></tr>
+    <tr><td><strong>Cooperative M-form</strong></td><td>BU ⇄ BU (cross-linked)</td><td>Business Units actively cooperate/share resources with each other</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>Case application:</strong> Alphabet's structure is a <strong>Competitive M-form</strong> at the top level — Google, Nest, Verily, Calico, X, etc. each had <strong>separate CEOs</strong> and operated with explicit autonomy ("I act as a CEO of an independent company instead of a senior executive within a large company" — Andy Conrad, CEO of Verily). Yet some <strong>cooperative</strong> elements remained: a <strong>central treasury</strong>, shared corporate services (billed back), and a "Don't Be Evil"-style shared brand/culture.
+  </div>
+
+  <h3>How Does Corporate Add Value to Shareholders?</h3>
+  <h4>① Portfolio Management</h4>
+  <p>Corporates take on the role of a <strong>Banker</strong>.</p>
+  <div class="case">
+    <strong>Case parallel:</strong> Porat's <strong>"70:20:10" resource allocation system</strong> (70% core, 20% adjacent, 10% research/moonshots) is literally a portfolio-management rule for allocating capital across a portfolio of businesses at different risk/maturity levels — the Banker role in action.
+  </div>
+
+  <h4>② Role of Intervenors</h4>
+  <p>Corporate intervenes to bring:</p>
+  <ul>
+    <li><strong>Strategy</strong></li>
+    <li>New <strong>team</strong></li>
+    <li>New <strong>technology</strong></li>
+    <li><strong>Restructuring</strong></li>
+  </ul>
+  <div class="case">
+    <strong>Case example:</strong> Alphabet replaced Nest's CEO (Fadell → Marwan Fawaz, a "people skills" operator) and pressured Other Bets to present formal business plans ("Show us your business plan for the year. We're going to hold you to those numbers") — classic intervenor behaviors: new team + new discipline/strategy.
+  </div>
+</section>
+
+<!-- SECTION 7 -->
+<section id="sec7">
+  <h2 class="section-title"><span class="num">7</span>Unrelated Diversification &amp; the BCG Matrix</h2>
+
+  <h3>Unrelated Diversification</h3>
+  <div class="key">
+    <strong>Conglomerate</strong> = one or more <em>unrelated</em> businesses under a single corporate umbrella.
+  </div>
+
+  <h3>Coordination Diagrams</h3>
+  <p>Three business units (A, B, S) with bidirectional arrows represent <strong>much coordination</strong> required between related units. An <strong>SPOC (Single Point of Contact)</strong> moves <strong>to FC (Functional/Financial Coordination)</strong> as complexity grows.</p>
+
+  <h3>Google &amp; Shareholders — Reframed</h3>
+  <ul>
+    <li><strong>Google: Adv = +ve (positive)</strong> — the restructuring was net positive for Google's core business.</li>
+    <li><strong>Shareholders → +ve Advantages</strong></li>
+  </ul>
+
+  <div class="warn">
+    <strong>Key Learning:</strong> "Change in Org Structure is <em>not a panacea</em>." Helpful for Google, but <strong>not (necessarily) for the Moonshots</strong>.
+  </div>
+  <div class="case">
+    <strong>Case voice on both sides of this debate:</strong>
+    <ul>
+      <li><em>Skeptical view:</em> "Being liberated from Google, the moonshots were supposed to thrive under the Alphabet umbrella. Have they? The early results are not good." — <em>The Guardian</em>, June 2016.</li>
+      <li><em>Optimistic view:</em> "Alphabet's chief enforcer, CFO Ruth Porat, had a say in deciding that such an important product for the company [Google Home] should be fledged elsewhere — so that it could earn its wings free of the division's drama, financial or otherwise." — <em>Fortune</em>, June 2016 (re: Fadell's departure as evidence the structure was <em>working</em>, not failing).</li>
+    </ul>
+  </div>
+
+  <h3>The BCG-style 2×2 Matrix</h3>
+  <p>Axes: <strong>Growth</strong> (vertical) vs <strong>Market Share / Competitiveness of Firm</strong> (horizontal).</p>
+  <div class="diagram-box">
+    <svg class="matrix-svg" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" width="100%" height="320">
+      <style>
+        .axis{stroke:#555;stroke-width:1.5;}
+        .lbl{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;fill:#2b2b2b;}
+        .q{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;fill:#1f5fa8;font-weight:bold;}
+      </style>
+      <line x1="210" y1="20" x2="210" y2="280" class="axis"/>
+      <line x1="40" y1="150" x2="380" y2="150" class="axis"/>
+      <text x="210" y="14" class="lbl" text-anchor="middle">High Growth</text>
+      <text x="210" y="298" class="lbl" text-anchor="middle">Low Growth</text>
+      <text x="32" y="155" class="lbl" text-anchor="end">High MS</text>
+      <text x="388" y="155" class="lbl" text-anchor="start">Low MS</text>
+      <text x="120" y="80" class="q">Star</text>
+      <text x="290" y="80" class="q">Question Mark</text>
+      <text x="120" y="230" class="q">Cash Cow</text>
+      <text x="290" y="230" class="q">Dog</text>
+      <text x="210" y="310" class="lbl" text-anchor="middle">Competitiveness of Industry / Firm</text>
+    </svg>
+  </div>
+
+  <div class="case">
+    <strong>Case mapping onto BCG quadrants (illustrative, as discussed in class):</strong>
+    <table>
+      <tr><th>Quadrant</th><th>Alphabet Business (c. 2016)</th><th>Rationale</th></tr>
+      <tr><td><strong>Cash Cow</strong></td><td>Search / Ads (Google core)</td><td>Dominant share (64% US search), mature, generates ~90% of revenue, funds everything else</td></tr>
+      <tr><td><strong>Star</strong></td><td>YouTube, Android</td><td>High growth, strong/growing share, strategically central</td></tr>
+      <tr><td><strong>Question Mark</strong></td><td>Verily, Nest, Waymo (self-driving)</td><td>High potential, uncertain share/profitability, "pre-revenue"</td></tr>
+      <tr><td><strong>Dog</strong></td><td>Boston Dynamics, Revolv (shut down)</td><td>Low growth realized, divested or discontinued</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 8 -->
+<section id="sec8">
+  <h2 class="section-title"><span class="num">8</span>Two Ways of Adding Value + Thick/Thin HQ</h2>
+
+  <div class="grid-2">
+    <div>
+      <h4>(i) Transferring Skills</h4>
+      <p>Relates to <strong>Public Goods</strong> characteristics:</p>
+      <ul>
+        <li>Non-excludable</li>
+        <li>Non-rivalrous</li>
+      </ul>
+      <p>Skills/know-how can be used by multiple BUs without depletion.</p>
+    </div>
+    <div>
+      <h4>(ii) Sharing Activity</h4>
+      <p>Relates to <strong>Private Goods</strong> characteristics — e.g.:</p>
+      <ul>
+        <li>Sales distribution networks shared with other business units</li>
+      </ul>
+      <p>(Use by one BU can limit availability for others — rivalrous.)</p>
+    </div>
+  </div>
+
+  <div class="case">
+    <strong>Case examples of both mechanisms:</strong>
+    <ul>
+      <li><strong>Transferring Skills (public good):</strong> Google's engineering/AI talent and "20% time" culture spread informally to Other Bets via people movement and shared norms — non-rivalrous knowledge transfer.</li>
+      <li><strong>Sharing Activity (private good, rivalrous):</strong> Alphabet's central treasury, computing infrastructure, and recruiting function were <em>shared services</em> — and precisely because they're rivalrous/costly, Alphabet began <strong>billing Other Bets for them</strong> in late 2015.</li>
+    </ul>
+  </div>
+
+  <h3>Resource Coordination Model (General ↔ Specialized)</h3>
+  <div class="diagram-box">
+    <p style="text-align:center;">
+      <strong>General &amp; Specialized Resources</strong> ⟷ <strong>Business Units</strong> ⟷ <strong>Organization</strong> (coordination, control, strategic planning, operational control)
+    </p>
+  </div>
+
+  <h3>Thick HQ vs Thin HQ</h3>
+  <table>
+    <tr><th></th><th>Thick HQ</th><th>Thin HQ</th></tr>
+    <tr>
+      <td><strong>Resource Type</strong></td>
+      <td><strong>Specialized Resources</strong> — require mixed/specific expertise</td>
+      <td><strong>General Resources</strong> — do not require specialized people</td>
+    </tr>
+    <tr>
+      <td><strong>Role</strong></td>
+      <td>Corporate resolves conflicts (much larger HQ — "General Electric" style)</td>
+      <td>Sharing of specialized resources minimized; lean coordination (SPOC/FC style)</td>
+    </tr>
+    <tr>
+      <td><strong>Control Style</strong></td>
+      <td>Strategic Planning &amp; Operational Control — centrally driven</td>
+      <td>Financial Control (FC) — light-touch, numbers-driven</td>
+    </tr>
+  </table>
+
+  <div class="key">
+    <strong>Corporate Decision-Making Spectrum:</strong> Financial Control → Strategic Planning → Operational Control — increasing degrees of corporate-level involvement in BU decisions.
+  </div>
+
+  <div class="case">
+    <strong>Where does Alphabet sit?</strong> Alphabet deliberately moved <strong>from Thick HQ toward Thin HQ / Financial Control</strong> for Other Bets — each subsidiary got its own CEO, hiring, and marketing functions ("It gets a little faster, more efficient and a little more independent" — Andy Conrad). But it retained <strong>some Thick HQ elements</strong> (central treasury, no separate debt/equity raising per subsidiary, shared infrastructure billed centrally) — making it a <strong>hybrid</strong>, not a pure Thin-HQ holding company like classic Berkshire Hathaway (see Section 16).
+  </div>
+</section>
+
+<!-- SECTION 9 -->
+<section id="sec9">
+  <h2 class="section-title"><span class="num">9</span>Diversification Premium vs Discount</h2>
+
+  <div class="diagram-box">
+    <svg class="matrix-svg" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="280">
+      <style>
+        .axis{stroke:#555;stroke-width:1.5;}
+        .lbl{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;fill:#2b2b2b;}
+        .curve{stroke:#1f5fa8;stroke-width:2.5;fill:none;}
+      </style>
+      <line x1="50" y1="240" x2="50" y2="20" class="axis"/>
+      <line x1="50" y1="240" x2="560" y2="240" class="axis"/>
+      <text x="20" y="30" class="lbl" transform="rotate(-90 20 30)">Performance</text>
+      <text x="300" y="270" class="lbl" text-anchor="middle">Level of Diversification</text>
+      <path class="curve" d="M60,220 C 150,40 250,40 320,90 C 420,160 480,220 550,225"/>
+      <text x="150" y="60" class="lbl" fill="#1e8e5a" font-weight="bold">Diversification Premium</text>
+      <text x="430" y="200" class="lbl" fill="#c0392b" font-weight="bold">Diversification Discount</text>
+    </svg>
+  </div>
+
+  <p>Performance rises with diversification up to a point (premium zone), then declines beyond an optimal level (discount zone) — an inverted-U relationship.</p>
+
+  <h3>Defining Premium / Discount via Stock Valuation</h3>
+  <table>
+    <tr><th>Condition</th><th>Formula</th></tr>
+    <tr><td><strong>Premium</strong></td><td>StockVal(A+B) &gt; StockVal(A) + StockVal(B)</td></tr>
+    <tr><td><strong>Discount</strong></td><td>StockVal(A+B) ≤ StockVal(A) + StockVal(B)</td></tr>
+  </table>
+
+  <div class="example">
+    <strong>Classic Conglomerate Discount Example:</strong> General Electric — sum-of-the-parts value of GE's diverse divisions often exceeded its combined market valuation as one conglomerate.
+  </div>
+
+  <h3>How is "Relatedness" Defined? — Two Lenses</h3>
+  <div class="grid-2">
+    <div>
+      <h4>1. Operational Similarities</h4>
+      <p>→ <strong>Sharing Resources</strong></p>
+      <p>e.g., shared distribution networks, manufacturing/tech infrastructure, talent pools.</p>
+    </div>
+    <div>
+      <h4>2. Strategic Similarities</h4>
+      <p>→ <strong>Dominant Logic</strong></p>
+      <p>e.g., similar competitive positioning, similar project lifecycles, similar investment requirements.</p>
+    </div>
+  </div>
+
+  <h3>Strategic Similarity Example: P&amp;G (FMCG)</h3>
+  <ul>
+    <li><strong>Same competitive positioning</strong></li>
+    <li><strong>Projects with similar life cycles</strong></li>
+    <li><strong>Projects with similar investment requirements</strong></li>
+  </ul>
+
+  <div class="case">
+    <strong>Case test — did Alphabet earn a "diversification premium" in the eyes of the market?</strong> The data says <strong>yes, at least initially</strong>:
+    <ul>
+      <li>On <strong>August 10, 2015</strong> (restructuring announcement), Google's shares — which had lagged in H1 2015 — climbed <strong>6.2% in late trading</strong>.</li>
+      <li>On <strong>October 2, 2015</strong> (official incorporation in Delaware), Alphabet shares surged <strong>2.3% to $657</strong>.</li>
+      <li>By <strong>February 2016</strong>, Alphabet stock was nearly <strong>50% above</strong> summer-2015 levels.</li>
+      <li>One analyst: "We continue to think an era of more disclosure and cost consciousness... is positive for Google."</li>
+    </ul>
+    <strong>Mechanism:</strong> The market reaction wasn't really about the underlying businesses changing overnight — it was about <strong>transparency</strong>. New segment reporting (Google vs. Other Bets) let investors finally separate the cash-generative core from the loss-making bets, reducing the "conglomerate discount" caused by <em>opacity</em> rather than by the businesses themselves.
+  </div>
+
+  <h3>Why Conglomerates Perform Better in Some Markets</h3>
+  <ol>
+    <li>① <strong>Institutional Voids</strong> — weaker institutions in emerging markets mean conglomerates fill gaps (financing, talent pipelines, regulatory navigation) that specialized firms cannot.</li>
+    <li>② <strong>Better internal labour or capital markets</strong> — internal allocation substitutes for underdeveloped external markets.</li>
+  </ol>
+
+  <div class="key">
+    <strong>Synthesis:</strong> Conglomerate discounts are more common in <strong>developed economies</strong> (efficient external capital markets make internal diversification redundant); conglomerates can create value (avoid the discount or earn a premium) in <strong>emerging economies</strong> with institutional voids.
+  </div>
+  <div class="case">
+    <strong>Case nuance:</strong> Alphabet operates in the most <em>developed</em> capital market in the world (US tech/Nasdaq) — yet it still pursued a conglomerate-like structure. This is consistent with the academic point that institutional-voids logic <strong>doesn't fully explain</strong> Alphabet's diversification; the better explanation is the <strong>"moonshot factory"</strong> logic — using internal capital to fund 10-year-horizon bets that external VC markets are too short-term/impatient to fund (echoed by Page: moonshots take "longer than an average venture capital bet").
+  </div>
+</section>
+
+<!-- SECTION 10 -->
+<section id="sec10">
+  <h2 class="section-title"><span class="num">10</span>Legal Structures: Holding Company, Subsidiary, SBUs</h2>
+
+  <h3>Different Legal Structures</h3>
+  <table>
+    <tr><th>Structure</th><th>Description</th></tr>
+    <tr><td><strong>Holding Company</strong></td><td>= Investment Company. Holds ownership stakes in other companies but typically doesn't run day-to-day operations.</td></tr>
+    <tr><td><strong>Parent–Subsidiary</strong></td><td>Subsidiaries are <strong>private</strong> legal entities controlled by the parent.</td></tr>
+  </table>
+
+  <h3>SBUs vs Subsidiaries</h3>
+  <ul>
+    <li><strong>Subsidiaries → Legal Entity</strong></li>
+    <li><strong>Partial Ownership by Corporate</strong> = "Pulley" relationship (&gt; 50% ownership by corporate = controlling subsidiary)</li>
+    <li><strong>Business Affiliate:</strong> ~20–50% ownership stake (significant influence, not full control)</li>
+  </ul>
+
+  <h3>Case Discussion: Problems Identified (General, before applying to Alphabet)</h3>
+  <ol>
+    <li><strong>Corporate Governance</strong> issues</li>
+    <li><strong>Opaque R&amp;D Budget &amp; Reporting</strong>
+      <ul>
+        <li>No (clear) understanding of allocations</li>
+        <li>Dual Class of Shares — creates governance complexity (differential voting rights)</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="key">
+    <strong>Resolution noted:</strong> The company <strong>brought in a new CFO</strong>, whose mandate combined:
+    <ul>
+      <li><strong>Cost Reduction</strong></li>
+      <li><strong>Supporting Growth</strong></li>
+    </ul>
+  </div>
+
+  <div class="case">
+    <strong>This is literally the Alphabet/Ruth Porat story:</strong>
+    <ul>
+      <li><strong>Dual/Triple class shares:</strong> Google's 2004 IPO created Class A (1 vote) and Class B (10 votes, insiders only); in March 2014 a new <strong>Class C (no voting power)</strong> was introduced — described by one investor as creating a structure where "What comes out of Google ten years from now is probably dysfunctional."</li>
+      <li><strong>Opaque R&amp;D / reporting:</strong> Analysts in June 2014 noted revenues grew 22x (2004-2014) while expenses grew 23x, and called for "greater transparency in Google's expense line" — especially around moonshots with "less transparent monetization potential."</li>
+      <li><strong>New CFO (cost reduction + growth):</strong> <strong>Ruth Porat</strong> (ex-Morgan Stanley) joined as CFO in March 2015. Her mandate: "A key focus is on the levers within our control to manage the pace of expenses while still ensuring and supporting our growth." Investors responded by sending the stock up <strong>16.3% in a single day</strong>, adding <strong>~$65 billion</strong> in market value — one of the largest single-day market-cap gains ever recorded at the time.</li>
+    </ul>
+  </div>
+
+  <div class="warn">
+    <strong>Governance caveat that persists:</strong> Even after Porat's arrival and the Alphabet restructuring, <strong>Page and Brin retained &gt;50% of voting stock</strong> in August 2015 — the dual-class structure means improved <em>disclosure</em> did not translate into improved <em>shareholder control</em>. Institutional Shareholder Services had given Google a lower governance rating than all Fortune 500 firms shortly after its IPO, calling the dual-class structure "benevolent despotism."
+  </div>
+</section>
+
+<!-- SECTION 11 -->
+<section id="sec11">
+  <h2 class="section-title"><span class="num">11</span>CASE: Alphabet Eyes New Frontiers — Background</h2>
+
+  <h3>Origin Story</h3>
+  <div class="timeline">
+    <div class="event"><span class="date">1995</span> — Larry Page &amp; Sergey Brin meet at Stanford.</div>
+    <div class="event"><span class="date">1997</span> — Register Google.com (from "googol," 10<sup>100</sup>).</div>
+    <div class="event"><span class="date">1998</span> — Google, Inc. incorporated in California; HQ in a Menlo Park garage.</div>
+    <div class="event"><span class="date">2000</span> — Largest search engine in the world (1 billion pages indexed).</div>
+    <div class="event"><span class="date">2001</span> — Eric Schmidt joins as Chairman, becomes CEO; shares management with founders.</div>
+    <div class="event"><span class="date">2004</span> — IPO via unconventional <strong>auction format</strong> at $85/share; stock closes &gt;$100 day one. Dual-class share structure introduced (Class A: 1 vote, Class B: 10 votes for insiders).</div>
+    <div class="event"><span class="date">2006</span> — "Google" becomes a verb in the Oxford English Dictionary.</div>
+    <div class="event"><span class="date">2011</span> — Page returns as CEO ("Day-to-day adult supervision no longer needed!" — Schmidt's tweet). Capex and headcount expand significantly.</div>
+    <div class="event"><span class="date">2014 (Mar)</span> — Class C (no-voting) shares introduced.</div>
+    <div class="event"><span class="date">2015 (Mar)</span> — Ruth Porat hired as CFO from Morgan Stanley.</div>
+    <div class="event"><span class="date">2015 (Aug 10)</span> — Alphabet restructuring announced.</div>
+    <div class="event"><span class="date">2015 (Oct 2)</span> — Alphabet Inc. officially incorporated in Delaware.</div>
+    <div class="event"><span class="date">2016 (Jun)</span> — Tony Fadell leaves Nest; case closes with open strategic questions.</div>
+  </div>
+
+  <h3>The Unusual IPO — A Strategic Signal</h3>
+  <div class="case">
+    <p>Google's 2004 IPO was deliberately <strong>unconventional</strong>:</p>
+    <ul>
+      <li><strong>Auction format</strong> — precluded underwriters from setting price/marketing/earning high fees; criticized for failing to answer basic investor questions like "how will you spend the money?"</li>
+      <li><strong>Dual-class shares</strong> from day one — Page &amp; Brin explicitly framed this as <strong>protecting independence and the ability to take long-term, high-risk bets</strong> without short-term investor pressure: "[The] standard structure of public ownership may jeopardize the independence and focused objectivity that have been most important in Google's past success."</li>
+    </ul>
+    <strong>Strategic link:</strong> This is the <em>governance foundation</em> that later enabled the moonshot-funding model — without dual-class control, sustained spending on Calico, X, Nest etc. against investor objections would have been far harder.
+  </div>
+
+  <h3>The Innovation Culture (Organizational Capability, Section 3 callback)</h3>
+  <div class="grid-3">
+    <div>
+      <h4>20% Time</h4>
+      <p>Employees spend 20% of time on what they think benefits Google most. Produced AdSense (~25% of revenue), Gmail, Google News, autocomplete, even commuter buses.</p>
+    </div>
+    <div>
+      <h4>Bell Labs Inspiration</h4>
+      <p>Googleplex workspace design (long corridors, communal cafes) deliberately copied Bell Labs' layout to engineer "casual collisions" / serendipity between researchers.</p>
+    </div>
+    <div>
+      <h4>Celebrating Failure</h4>
+      <p>Google Wave (2010) shut down after 6 months — team was <strong>given bonuses</strong> for the "smart failure." Astro Teller (X) bonused entire teams for ending projects, including a $200M cargo-ship prototype that was killed before being built.</p>
+    </div>
+  </div>
+
+  <h3>The Talent Paradox</h3>
+  <div class="case">
+    <p>By 2015, <strong>&gt;2 million people/year</strong> applied to work at Google — preferred employer of both engineering and business students, 89% employee satisfaction (PayScale).</p>
+    <p>Yet between July 2012–2013, Google ranked <strong>4th-highest employee turnover</strong> among Fortune 500 firms; median tenure was just <strong>1.1 years</strong> despite median pay of $107,000. Reasons cited by leavers: "creeping bureaucracy," desire to "run her own show," over-protection from failure ("Google teaches you so much, but it also buffers and protects you"), and a shift from "innovation factory" to an "advertising company with a single, corporate-mandated focus."</p>
+    <p><strong>Strategic implication:</strong> Many ex-Googlers started their own companies — often <strong>funded by Google Ventures (GV)</strong> — meaning Google's diversification extended even into <em>venture investing in its own alumni</em>, a meta-level "transferring skills" mechanism.</p>
+  </div>
+</section>
+
+<!-- SECTION 12 -->
+<section id="sec12">
+  <h2 class="section-title"><span class="num">12</span>CASE: The 2015 Restructuring — Why &amp; How</h2>
+
+  <h3>What Changed on August 10, 2015</h3>
+  <div class="case">
+    <ul>
+      <li>New holding company <strong>Alphabet</strong> created.</li>
+      <li><strong>Larry Page</strong> → CEO of Alphabet.</li>
+      <li><strong>Sundar Pichai</strong> (formerly SVP, Google-branded products) → CEO of Google.</li>
+      <li>Page, Brin, and Porat run Alphabet; Schmidt remains Executive Chairman.</li>
+      <li><strong>Google subsidiary</strong> = Search, Ads, Maps, YouTube, Android.</li>
+      <li><strong>Non-Google subsidiaries</strong> = DeepMind (AI), Nest (smart home), Fiber (internet), Calico (longevity), X (moonshots), Sidewalk Labs (urban tech), GV &amp; Google Capital (investment arms).</li>
+      <li>Existing GOOG/GOOGL shares converted to Alphabet shares (same tickers).</li>
+      <li><strong>New segment reporting</strong> introduced — Google vs. Other Bets reported separately.</li>
+    </ul>
+  </div>
+
+  <h3>The "Berkshire Hathaway" Inspiration</h3>
+  <div class="case">
+    <p>Page explicitly said Alphabet borrowed "<strong>aspects</strong>" of the <strong>Berkshire Hathaway model</strong> — strong independent CEOs running each business, with corporate ("Sergey and me") "in service to them as needed." LinkedIn's Jeff Weiner tweeted: "Google's Alphabet sounds like a 21st century Berkshire Hathaway."</p>
+    <p><strong>But the case flags key disanalogies (important for exams):</strong></p>
+    <table>
+      <tr><th>Dimension</th><th>Berkshire Hathaway</th><th>Alphabet</th></tr>
+      <tr><td>How businesses acquired</td><td>Mostly via <strong>acquisition</strong> of existing, often mature, profitable companies</td><td>Mostly <strong>developed internally</strong> (organic moonshots from X, Google Life Sciences, etc.)</td></tr>
+      <tr><td>Buffett/founders' domain expertise</td><td>Historically <strong>not</strong> a technology investor</td><td>Deep technology focus across all subsidiaries</td></tr>
+      <tr><td>Decentralization</td><td>"Extreme — indeed, almost unheard of" (Buffett, 2016 letter); minimal central oversight</td><td>Significant autonomy (separate CEOs) but <strong>central treasury retained</strong> and shared services billed back</td></tr>
+      <tr><td>Profitability of units</td><td>Subsidiaries generally cash-generative (GEICO, See's Candies, Heinz)</td><td>Other Bets largely <strong>pre-revenue</strong>, $3.6B operating loss in 2015</td></tr>
+    </table>
+  </div>
+
+  <h3>The "70:20:10" Resource Allocation Rule (Porat)</h3>
+  <div class="key">
+    <strong>70%</strong> of resources → Core business<br>
+    <strong>20%</strong> → Adjacent projects<br>
+    <strong>10%</strong> → Pure research/moonshots
+  </div>
+  <p>This operationalizes the Portfolio Management ("Banker") role from Section 6 — a formal capital-allocation rule across a risk spectrum.</p>
+
+  <h3>The Core Strategic Tension (stated explicitly in the case)</h3>
+  <div class="warn">
+    <strong>"They must find execs willing to work within Alphabet's corporate umbrella, and teams willing to work with their chosen execs."</strong> — This single sentence captures the <strong>org-design dilemma</strong>: granting subsidiary CEOs real autonomy (to attract top talent who want to "run their own show") while still requiring them to operate inside a structure with shared treasury, shared brand risk, and shared reporting obligations to Alphabet's public shareholders.
+  </div>
+
+  <h3>Investor Reaction Mechanism — Why the Market Cheered</h3>
+  <div class="case">
+    <p>The restructuring didn't change the underlying businesses overnight — what changed was <strong>information</strong>. Before 2015, all R&amp;D/moonshot spending was buried inside one consolidated P&amp;L, making it impossible for investors to value the "core" Google business separately from speculative bets. Segment reporting let analysts essentially do a <strong>sum-of-the-parts valuation</strong>:</p>
+    <ul>
+      <li>Value the cash-generative <strong>Google segment</strong> using standard tech-multiple methods.</li>
+      <li>Treat <strong>Other Bets</strong> as a venture-style "option value" — small relative to the core, so its losses stop being a drag on the core's perceived value.</li>
+    </ul>
+    <p>This directly maps to the <strong>Diversification Premium/Discount</strong> formula in Section 9: by separating reporting, Alphabet effectively demonstrated <code>StockVal(Google) + OptionValue(Other Bets) &gt; StockVal(undifferentiated Alphabet blob)</code> — converting an <em>opacity-driven discount</em> into something closer to a premium.</p>
+  </div>
+</section>
+
+<!-- SECTION 13 -->
+<section id="sec13">
+  <h2 class="section-title"><span class="num">13</span>CASE: Nest — A Diversification Story Gone Wrong (or Right)?</h2>
+
+  <h3>Nest Timeline</h3>
+  <div class="timeline">
+    <div class="event"><span class="date">2010</span> — Founded by Tony Fadell (ex-Apple, iPod) &amp; Matt Rogers (ex-Apple).</div>
+    <div class="event"><span class="date">Oct 2011</span> — Launches first "Learning Thermostat" — NYT calls it "an innovative reimagining of a product category."</div>
+    <div class="event"><span class="date">Late 2013</span> — Thermostat in "almost 1% of U.S. homes."</div>
+    <div class="event"><span class="date">Jan 2014</span> — Google acquires Nest for <strong>$3.2B</strong> (2nd-largest Google acquisition ever).</div>
+    <div class="event"><span class="date">2014 (mid)</span> — Nest acquires Dropcam (security cameras) for <strong>$555M</strong>.</div>
+    <div class="event"><span class="date">2011-2015</span> — Annual revenue growth &gt;50%.</div>
+    <div class="event"><span class="date">Aug 2015</span> — Alphabet restructuring; Nest seen as a "main beneficiary" (more freedom to spend, acquire, take risks).</div>
+    <div class="event"><span class="date">2015</span> — Nest revenue: <strong>$340M</strong> — "lagging expectations" (Recode).</div>
+    <div class="event"><span class="date">Spring–Fall 2015</span> — 70 employees leave Nest.</div>
+    <div class="event"><span class="date">Mar 2016</span> — Alphabet pressures Other Bets: "Show us your business plan... we're going to hold you to those numbers."</div>
+    <div class="event"><span class="date">Apr 2016</span> — Nest shuts down Revolv (2014 acquisition) — bricking customer devices; bought "for the talent, not the products."</div>
+    <div class="event"><span class="date">Jun 2016</span> — Fadell departs; replaced by Marwan Fawaz (ex-Motorola, "people skills").</div>
+  </div>
+
+  <h3>Two Competing Diagnoses</h3>
+  <div class="grid-2">
+    <div>
+      <h4>Diagnosis 1: Cultural Mismatch</h4>
+      <p>"Nest, with its Apple DNA, was very much a top-down company, where only one person was in charge — Fadell. Google, on the other hand, has an engineer-driven, bottom-up culture." — Independent autonomy (granted by the holding-company model) <strong>amplified</strong> a pre-existing leadership style mismatch rather than fixing it.</p>
+    </div>
+    <div>
+      <h4>Diagnosis 2: Scale Without Discipline</h4>
+      <p>"This is something different, as evidenced by the continued lack of output from the currently 1,200-person team and its virtually unlimited budget." — Dropcam founder Greg Duffy. The Better-Off Test's "financial deep pocket" benefit, <strong>without financial discipline</strong>, can become a liability (resources without accountability).</p>
+    </div>
+  </div>
+
+  <h3>Connecting Back to the Frameworks</h3>
+  <div class="key">
+    <ul>
+      <li><strong>Better-Off Test revisited:</strong> The 2014 logic (funds, software prowess, talent/innovation mindset → Section 1) was sound <em>in principle</em>. The 2016 outcome shows that <strong>realizing</strong> economies of scope requires active <em>management of linkages</em> (Master Chart, Section 17) — which Alphabet initially under-invested in (autonomy without accountability), then over-corrected (sudden cost discipline in 2016).</li>
+      <li><strong>Hidden Coordination Costs (Tenet 2, Section 4):</strong> Internal complaints about Fadell's management and product delays, plus friction over shared services, are textbook hidden coordination costs that don't show up in deal-time financial models.</li>
+      <li><strong>Organizational Capabilities (Section 3):</strong> Google's "celebrate failure" culture (Google Wave, X's cancelled projects) was <strong>not successfully transferred</strong> to Nest — Nest's "Apple DNA" was risk-averse/secretive by comparison, suggesting that organizational capabilities are <strong>not automatically portable</strong> across acquired units.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION 14 -->
+<section id="sec14">
+  <h2 class="section-title"><span class="num">14</span>CASE: Other Moonshots &amp; Cross-Company Comparison</h2>
+
+  <h3>Alphabet's Full "Other Bets" Roster (2016, per Exhibit 6)</h3>
+  <table>
+    <tr><th>Company</th><th>Function</th><th>Location</th></tr>
+    <tr><td>Access/Google Fiber</td><td>TV &amp; Internet via fiber-optic, 9 US cities</td><td>Various</td></tr>
+    <tr><td>Calico</td><td>Human longevity research</td><td>San Francisco, CA</td></tr>
+    <tr><td>Nest</td><td>Smart thermostats &amp; remote-monitoring devices</td><td>Palo Alto, CA</td></tr>
+    <tr><td>Verily</td><td>Life science / health &amp; disease research</td><td>Mountain View, CA</td></tr>
+    <tr><td>GV (Google Ventures)</td><td>VC: life science, healthcare, AI, robotics, transport, cybersecurity, agriculture</td><td>Mountain View, CA</td></tr>
+    <tr><td>Google Capital</td><td>Growth equity fund (founded 2013)</td><td>San Francisco, CA</td></tr>
+    <tr><td>X (formerly Google X)</td><td>Moonshots: robots, self-driving cars, drones</td><td>Mountain View, CA</td></tr>
+    <tr><td>Sidewalk Labs</td><td>Urban innovation consulting for cities</td><td>New York, NY</td></tr>
+    <tr><td>DeepMind</td><td>AI research (acquired 2014)</td><td>London, UK</td></tr>
+  </table>
+
+  <h3>Spin-offs &amp; Restructuring Events (2015-2016)</h3>
+  <div class="case">
+    <ul>
+      <li><strong>Niantic</strong> (gaming, makers of Ingress, later Pokémon Go) — went <strong>independent</strong> within a day of the Alphabet announcement, raising $20M from Pokémon, Nintendo, and Google. Founder: "That's kind of a theme at Google, to take businesses that are not search and give them more independence."</li>
+      <li><strong>Verily</strong> (formerly Google Life Sciences) — "graduated" from X to become a standalone Alphabet company; then spun off <strong>Verb Surgical Inc.</strong> with Johnson &amp; Johnson/Ethicon. But STAT reported a dozen senior staff left amid complaints the CEO "exaggerates what Verily can deliver" and "rashly diverts resources."</li>
+      <li><strong>Self-driving cars</strong> — moved from X into its own Alphabet subsidiary (later named Waymo).</li>
+      <li><strong>Boston Dynamics</strong> (2013 acquisition) — put up for sale in March 2016; insiders cited "growing friction" between California/Tokyo teams and impatience with the "ten years" timeline: "We as a startup of our size cannot spend 30-plus percent of our resources on things that take ten years."</li>
+      <li><strong>Replicant</strong> (robotics) — folded back into X, no longer standalone.</li>
+    </ul>
+  </div>
+
+  <h3>How Do Other "Moonshot Factories" Compare?</h3>
+  <table>
+    <tr><th>Company</th><th>R&amp;D Spend (FY2015, % revenue)</th><th>Moonshot Approach</th></tr>
+    <tr><td><strong>Alphabet</strong></td><td>~15%</td><td>Google X, Calico, Other Bets — large, named, semi-independent units</td></tr>
+    <tr><td><strong>Facebook</strong></td><td>~21%</td><td>WhatsApp, Oculus Rift, Instagram, Ascenta (drones), AI — "very low business risk, very high technical risk" (CTO Mike Schroepfer)</td></tr>
+    <tr><td><strong>Apple</strong></td><td>~3.5%</td><td>Minimal formal R&amp;D ratio but reportedly pursuing self-driving car &amp; pay-TV projects; Steve Jobs (1998): "Innovation has nothing to do with how many R&amp;D dollars you have."</td></tr>
+    <tr><td><strong>Amazon</strong></td><td>—</td><td>Drone delivery, data storage, video streaming, publishing, tablets, plus "Grand Challenge" lab (cancer research, medical records, package delivery). Bezos: "Most large organizations embrace the idea of invention, but are not willing to suffer the string of failed experiments necessary to get there."</td></tr>
+    <tr><td><strong>Microsoft</strong></td><td>—</td><td>"Special Projects" group (subsea datacenters, DNA storage) under Microsoft Research subsidiary</td></tr>
+  </table>
+
+  <div class="key">
+    <strong>Pattern across all five:</strong> Every major tech giant in this period ran some version of an internal "moonshot factory" — suggesting this isn't unique to Alphabet's structure but a broader response to the same underlying problem: <strong>external capital markets (VC, public equity) are too short-horizon</strong> to fund genuinely 10-year bets, so internally-generated cash from a "Cash Cow" core business becomes the only viable funding source (Section 7 BCG mapping).
+  </div>
+
+  <h3>Historical Precedent — Bell Labs &amp; Xerox PARC</h3>
+  <div class="case">
+    <p>The case explicitly invokes <strong>AT&amp;T's Bell Labs</strong> and <strong>Xerox PARC</strong> as historical analogues — both produced extraordinary innovations (transistor, laser, Unix/C, GUI, Ethernet, laser printing) but largely <strong>failed to capture the commercial value</strong> themselves (the GUI went to Apple's Macintosh; Ethernet became a LAN standard used by everyone; Unix/C underpins the entire internet).</p>
+    <p><strong>Academic framing (cited in case):</strong> "If you think historically... the organizations with big R&amp;D divisions were AT&amp;T, IBM, and Xerox... Notice that each of those companies had a de facto monopoly" — implying that <strong>monopoly-level cash flow</strong> (like Google's ~90% ad-revenue dominance) is a precondition for sustaining this kind of speculative R&amp;D, but also a <strong>warning</strong>: those same companies "poured large sums of money into R&amp;D, but often failed to profit directly from new discoveries."</p>
+    <p>This directly echoes the <strong>Bell Labs/transistor → Intel/commercialization</strong> analogy from Section 1 — the risk that Alphabet could become "the next Bell Labs": brilliant invention, weak monetization, value captured by others.</p>
+  </div>
+</section>
+
+<!-- SECTION 15 -->
+<section id="sec15">
+  <h2 class="section-title"><span class="num">15</span>CASE: Financials &amp; Investor Reaction</h2>
+
+  <h3>Alphabet Segment Data, 2013-2015 (Exhibit 1b)</h3>
+  <table>
+    <tr><th>($ millions)</th><th>2013</th><th>2014</th><th>2015</th></tr>
+    <tr><td><strong>Revenue — Google</strong></td><td>55,507</td><td>65,674</td><td>74,541</td></tr>
+    <tr><td><strong>Revenue — Other Bets</strong></td><td>12</td><td>327</td><td>448</td></tr>
+    <tr><td><strong>Total Revenue</strong></td><td>55,519</td><td>66,001</td><td>74,989</td></tr>
+    <tr><td><strong>Operating Income — Google</strong></td><td>16,260</td><td>19,011</td><td>23,425</td></tr>
+    <tr><td><strong>Operating Income — Other Bets</strong></td><td>(527)</td><td>(1,942)</td><td>(3,567)</td></tr>
+    <tr><td><strong>Total Income from Operations</strong></td><td>15,403</td><td>16,496</td><td>19,360</td></tr>
+    <tr><td><strong>Capex — Google</strong></td><td>7,006</td><td>11,173</td><td>8,849</td></tr>
+    <tr><td><strong>Capex — Other Bets</strong></td><td>187</td><td>501</td><td>869</td></tr>
+  </table>
+
+  <div class="key">
+    <strong>Reading the numbers:</strong> Other Bets revenue grew <strong>27x from 2013→2014</strong> and another 37% in 2015 — but the <em>operating loss</em> grew even faster (from -$527M to -$3,567M, a <strong>~6.8x increase</strong> in just 2 years). Capex on Other Bets nearly <strong>5x'd</strong> (2013→2015). This is the financial signature of "betting big" — and exactly the kind of trend that, pre-2015 (when buried in one P&amp;L), alarmed analysts about "transparency."
+  </div>
+
+  <h3>Q4 2015 Earnings (Exhibit 1a)</h3>
+  <table>
+    <tr><th>($ millions)</th><th>Q3 2015</th><th>Q4 2015</th></tr>
+    <tr><td>Revenues</td><td>18,675</td><td>21,329</td></tr>
+    <tr><td>R&amp;D</td><td>3,230</td><td>3,510</td></tr>
+    <tr><td>Income from operations</td><td>4,708</td><td>5,380</td></tr>
+    <tr><td>Net income</td><td>3,979</td><td>4,923</td></tr>
+  </table>
+  <p>Revenue was up <strong>18% YoY</strong> and <strong>14% QoQ</strong> — Porat credited mobile search, YouTube, and programmatic advertising.</p>
+
+  <h3>Stock Performance — The Long View (Exhibit 2)</h3>
+  <div class="case">
+    <ul>
+      <li>2004 IPO at $85/share → climbed <strong>1,294% over 10 years</strong> (outperforming all but 10 other stocks in that period).</li>
+      <li><strong>Q3 2015 share buyback:</strong> Alphabet's <strong>first-ever buyback</strong>, $5.1 billion — itself a "Berkshire-style" capital allocation signal (returning excess cash rather than over-investing).</li>
+      <li><strong>Q4 2015 institutional ownership:</strong> 31% — <strong>higher than any other stock</strong> at the time; "best-possible 99 IBD Composite Rating" (outperformed 99% of stocks on sales/profit growth).</li>
+    </ul>
+  </div>
+
+  <h3>Top Institutional Shareholders (Exhibit 7, March 2016)</h3>
+  <table>
+    <tr><th>Owner</th><th>Shares Held</th><th>Value ($1,000s)</th></tr>
+    <tr><td>FMR LLC (Fidelity)</td><td>18,588,835</td><td>$12,661,599</td></tr>
+    <tr><td>Vanguard Group</td><td>17,822,708</td><td>$12,139,759</td></tr>
+    <tr><td>State Street Corp.</td><td>11,181,006</td><td>$7,615,830</td></tr>
+    <tr><td>T. Rowe Price</td><td>8,076,641</td><td>$5,501,323</td></tr>
+    <tr><td>Blackrock Institutional Trust</td><td>7,618,239</td><td>$5,189,087</td></tr>
+  </table>
+  <p class="source-note">All financial figures sourced from Alphabet Inc.'s 2015 10-K and the case exhibits (Capital IQ data).</p>
+</section>
+
+<!-- SECTION 16 -->
+<section id="sec16">
+  <h2 class="section-title"><span class="num">16</span>Berkshire Hathaway Lens — Real-World Benchmark</h2>
+  <p>Since the case explicitly invites the Alphabet ↔ Berkshire Hathaway comparison, it's worth knowing how a "true" decentralized holding company actually operates today (for contrast with Alphabet's hybrid model):</p>
+
+  <div class="grid-2">
+    <div>
+      <h4>Berkshire's Model</h4>
+      <ul>
+        <li>Decentralized — subsidiary CEOs make <strong>hiring, pricing, marketing, org structure, and compensation</strong> decisions independently.</li>
+        <li>Corporate oversight is mainly <strong>monthly financial reporting</strong> — true Thin HQ / Financial Control.</li>
+        <li><strong>One area of tight control:</strong> subsidiaries send <strong>excess cash flow up to the corporate level</strong> — this is the capital-allocation engine (insurance "float" from GEICO/reinsurance funds acquisitions across the group).</li>
+        <li>7 reportable business segments (Insurance, BNSF Railway, Berkshire Hathaway Energy, manufacturing/retail, etc.)</li>
+        <li>Businesses generally added via <strong>acquiring already-profitable, mature companies</strong> (GEICO, See's Candies, Duracell, Dairy Queen) — not built from scratch.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Alphabet's Model (by contrast)</h4>
+      <ul>
+        <li>Decentralized on <strong>paper</strong> (separate CEOs) but <strong>central treasury retained</strong> — no separate debt/equity raising per subsidiary (Section 10/11 notes).</li>
+        <li>Other Bets are mostly <strong>pre-revenue / loss-making</strong>, the opposite of Berkshire's cash-generative subsidiaries.</li>
+        <li>Businesses mostly <strong>built internally</strong> (X, Verily) rather than acquired mature.</li>
+        <li>2-segment reporting (Google / Other Bets) — far less granular than Berkshire's 7 segments.</li>
+        <li><strong>Capital allocation rule</strong> is the 70:20:10 framework rather than a "send cash up, redeploy centrally" insurance-float mechanism.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="key">
+    <strong>Exam-relevant insight:</strong> "Borrowing aspects" of Berkshire is <strong>not the same as</strong> replicating its model. The key Berkshire features that make decentralization <em>work</em> — (1) subsidiaries are already profitable and self-funding, (2) a real cash-upstream mechanism, (3) genuinely hands-off corporate oversight — were only <strong>partially</strong> present at Alphabet in 2016. This is arguably <em>why</em> Nest's autonomy produced drift rather than Berkshire-style quiet compounding: autonomy without Berkshire's cash-discipline mechanism.
+  </div>
+</section>
+
+<!-- SECTION 17 -->
+<section id="sec17">
+  <h2 class="section-title"><span class="num">17</span>Master Summary Table — The Big Picture (Master Chart)</h2>
+  <p>The consolidated framework: <strong>Level of Diversification → Org Structure → Role of HQ → Function</strong>.</p>
+
+  <table>
+    <tr>
+      <th>Revenue %</th>
+      <th>Level of Diversification</th>
+      <th>Org. Structure</th>
+      <th>Role of HQ in Enhancing Shareholder Value</th>
+    </tr>
+    <tr>
+      <td>&gt; 95%</td>
+      <td><strong>(i) Single</strong></td>
+      <td>Functional</td>
+      <td rowspan="2" style="vertical-align:middle;">
+        Operational Similarities <em>vs</em> Strategic Similarities → <strong>"Dominant Logic"</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>70–95%</td>
+      <td><strong>(ii) Dominant</strong></td>
+      <td>— same (Functional) —</td>
+    </tr>
+    <tr>
+      <td>&lt; 70%</td>
+      <td><strong>(iii) Related</strong><br>— Constrained (R—R sharing a Corporate node C)<br>— Linked (R—R chain pattern)</td>
+      <td>Co-operative M-form<br>(C with BU—BU sharing)</td>
+      <td rowspan="2">
+        <strong>Portfolio Mgmt.</strong> – managing portfolio<br>
+        <strong>Restructuring</strong> – managing individual businesses<br>
+        <strong>Transferring Skills</strong> + <strong>Sharing Activities</strong> → Managing linkages across businesses<br>
+        + <strong>Managing change</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>&lt; 70%</td>
+      <td><strong>(iv) Unrelated</strong> → Conglomerate<br><em>(SBUs / Subsidiary / Division / Affiliate — legal structure variants)</em></td>
+      <td>Competitive M-form<br>(C → BU, BU independently)</td>
+    </tr>
+  </table>
+
+  <h3>Right-Side Concepts (Resource &amp; Performance Logic)</h3>
+  <div class="grid-2">
+    <div>
+      <h4>Resource Type ↔ HQ Size</h4>
+      <ul>
+        <li><strong>Public good / Generalized resources</strong> → <strong>Thin HQ / FC</strong> (Financial Control)</li>
+        <li><strong>Private good / Specialized resources</strong> → <strong>Thick HQ / SP</strong> (Strategic Planning)</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Diversification Performance Curve</h4>
+      <p>Performance peaks at moderate diversification:</p>
+      <ul>
+        <li>Rising portion = <strong>Diversification Premium</strong></li>
+        <li>Falling portion = <strong>Diversification Discount</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>BCG Matrix Application</h3>
+  <div class="callout">
+    Competitive M-form / Conglomerate structures use <strong>Portfolio Mgmt. + Restructuring</strong> via the <strong>Application of the BCG Matrix</strong> (Stars, Cash Cows, Dogs, Question Marks) — feeding into decisions framed as <strong>Developed vs Emerging Economy Countries</strong>.
+  </div>
+
+  <h3>Conglomerate Performance — Why "Perform Better" in Emerging Markets</h3>
+  <ul>
+    <li><strong>Institutional Voids</strong> — conglomerates substitute for missing market institutions</li>
+    <li><strong>Better internal capital &amp; labour markets</strong> — internal allocation beats inefficient external markets</li>
+  </ul>
+  <div class="warn">
+    <strong>Conglomerate Discount</strong> applies more in <strong>developed economies</strong> with efficient external capital/labour markets — making internal diversification value-destructive (sum of parts &gt; whole).
+  </div>
+
+  <h3>Legal Structure Comparison (Bottom of Master Chart)</h3>
+  <table>
+    <tr><th>M-form (Operating)</th><th>Holding Company (Investment)</th></tr>
+    <tr><td>Semi-autonomous units</td><td>Autonomous units</td></tr>
+    <tr><td>Operating company — engages in day-to-day ops</td><td>Investment company — does <strong>not</strong> engage in day-to-day ops</td></tr>
+    <tr><td>Subsidiaries are mostly <strong>private</strong></td><td>Subsidiaries are mostly <strong>public</strong></td></tr>
+    <tr><td>Central treasury <strong>exists</strong></td><td>No central treasury — financed via <strong>debt &amp; equity</strong> independently</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>Where Alphabet sits on this chart:</strong> Alphabet calls itself a <strong>Holding/Investment Company</strong> (right column) — but it retains a <strong>central treasury</strong> (a left-column, M-form feature) and its key subsidiaries (Google, Nest, Verily, etc.) are <strong>private</strong>, not public. So on this dimension, Alphabet is structurally closer to the <strong>M-form / operating-company</strong> column despite its "holding company" label — a genuine hybrid that doesn't fit either box cleanly.
+  </div>
+</section>
+
+<!-- SECTION 18 -->
+<section id="sec18">
+  <h2 class="section-title"><span class="num">18</span>Exam-Ready Synthesis &amp; Discussion Questions</h2>
+
+  <h3>One-Page Mental Model</h3>
+  <div class="key">
+    <ol>
+      <li><strong>Should you diversify at all?</strong> → Run the 3 Diversification Tests (Attractiveness, Cost of Entry, Better-Off).</li>
+      <li><strong>If yes — how related should it be?</strong> → Classify by revenue mix (Single/Dominant/Related/Unrelated) AND by relatedness type (Operational similarities = sharing resources; Strategic similarities = dominant logic).</li>
+      <li><strong>What org structure fits?</strong> → Functional (Single/Dominant) → Co-operative M-form (Related) → Competitive M-form/Conglomerate (Unrelated).</li>
+      <li><strong>How thick should HQ be?</strong> → Depends on whether resources shared are General/Public-good (Thin HQ/FC) or Specialized/Private-good (Thick HQ/SP).</li>
+      <li><strong>Did it create value?</strong> → Check Diversification Premium vs Discount via sum-of-the-parts stock valuation; check returns vs cost of capital (debt &amp; equity).</li>
+      <li><strong>What's the legal wrapper?</strong> → Holding company/Investment company (autonomous, no day-to-day ops, public subsidiaries, no central treasury) vs. M-form/Operating company (semi-autonomous, day-to-day ops, private subsidiaries, central treasury).</li>
+    </ol>
+  </div>
+
+  <h3>The Alphabet Case Through This Model</h3>
+  <table>
+    <tr><th>Question</th><th>Alphabet's Answer (as of mid-2016)</th></tr>
+    <tr><td>Diversification Tests</td><td>Passed at deal-time for Nest (funds, software prowess, talent) — but Better-Off realization lagged</td></tr>
+    <tr><td>Revenue-based level</td><td>~99% from Google segment → technically "Single," strategically far more diversified</td></tr>
+    <tr><td>Relatedness</td><td>Mostly Unrelated (Calico, Verily, X bear little operational resemblance to Search/Ads)</td></tr>
+    <tr><td>Org structure</td><td>Competitive M-form (separate CEOs) with some Co-operative elements (shared billed services)</td></tr>
+    <tr><td>HQ thickness</td><td>Moving Thin (autonomy granted) but retaining Thick elements (central treasury, cost discipline imposed top-down in 2016)</td></tr>
+    <tr><td>Premium/Discount</td><td>Market rewarded the <em>disclosure</em> (transparency premium) — underlying Other Bets performance remained loss-making</td></tr>
+    <tr><td>Legal wrapper</td><td>Calls itself Holding Company; structurally hybrid (private subsidiaries + central treasury = M-form traits)</td></tr>
+  </table>
+
+  <h3>Open Discussion Questions (from the case, useful for class debate)</h3>
+  <div class="case">
+    <ol>
+      <li>Were Nest's 2015-16 problems evidence that the Alphabet structure was <strong>incompatible</strong> with Google's innovation agenda, or did it actually make breakthrough innovation <strong>easier</strong> to deliver (per the "Fadell's departure shows the structure is working" view)?</li>
+      <li>Does it make sense to host such a <strong>large and diverse set of "moonshots" under a single corporate owner</strong> — or would spinning them out entirely (like Niantic) unlock more value?</li>
+      <li>Is the <strong>Berkshire Hathaway analogy</strong> appropriate, given the structural differences in Section 16 (acquired-vs-built, profitable-vs-pre-revenue, true decentralization-vs-central treasury)?</li>
+      <li>How should <strong>"Other Bets" be evaluated</strong> — as a portfolio of options (BCG "Question Marks" with optionality value) or as a drag on the core business that should be wound down/spun off like Boston Dynamics and Revolv?</li>
+      <li>Given the <strong>dual/triple-class share structure</strong> and Page/Brin's &gt;50% voting control, does "increased transparency" via segment reporting meaningfully change governance — or is it primarily an <strong>investor-relations / signaling exercise</strong>?</li>
+    </ol>
+  </div>
+
+  <h3>Quick-Recall Glossary</h3>
+  <div class="grid-3">
+    <div>
+      <h4>Better-Off Test</h4>
+      <p>Will the BU or corporation gain a competitive advantage from the link? (funds, skills, talent, brand)</p>
+    </div>
+    <div>
+      <h4>Dominant Logic</h4>
+      <p>Strategic similarity across businesses — similar competitive positioning, lifecycle, investment needs (e.g., P&amp;G's FMCG brands)</p>
+    </div>
+    <div>
+      <h4>Economies of Scope</h4>
+      <p>Sharing tangible (distribution, IT) and intangible (tech, brand, reputation) resources across BUs</p>
+    </div>
+    <div>
+      <h4>Thin HQ / FC</h4>
+      <p>Lean corporate center, financial-control-only oversight, suited to general/public-good resources</p>
+    </div>
+    <div>
+      <h4>Conglomerate Discount</h4>
+      <p>StockVal(A+B) ≤ StockVal(A)+StockVal(B) — sum of parts exceeds the whole (e.g., GE)</p>
+    </div>
+    <div>
+      <h4>70:20:10</h4>
+      <p>Alphabet's resource-allocation rule: 70% core, 20% adjacent, 10% moonshots/research</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Compiled from handwritten lecture &amp; professor notes, plus HBS Case 9-717-418 "Alphabet Eyes New Frontiers (A)" (Alcácer, Sadun, Hull, Herman; Rev. March 20, 2024), and supplementary research on Berkshire Hathaway's holding-company model.<br>
+  For class discussion purposes only — not an endorsement of any company's strategy.
+</footer>
+
+</div>
+</body>
+</html>
